@@ -377,7 +377,7 @@ footer .r{text-align:right;color:rgba(255,255,255,.8)}
 .ig-links{padding-bottom:28px}
 .about-lockup{margin-top:0!important;padding-top:28px;border-top:1px solid rgba(255,255,255,.3);display:flex;align-items:center;gap:16px}
 .about-lockup .lk-expo{height:34px;width:auto}
-.about-lockup .lk-lz{height:30px;width:auto}
+.about-lockup .lk-lz{height:22px;width:auto}
 .about-lockup .x{color:rgba(255,255,255,.6);font-size:20px}
 .cd-block .cd{display:flex;align-items:center;gap:8px}
 .cd-block .cd b{background:#B3262B;padding:0 7px;line-height:32px;font-weight:500}
@@ -419,7 +419,8 @@ footer .r{text-align:right;color:rgba(255,255,255,.8)}
 .ig-links a{text-decoration:underline;text-underline-offset:4px}
 .visit .two .r.join{background:none;border:0;backdrop-filter:none;-webkit-backdrop-filter:none;padding:0}
 .site-foot{padding:40px 0}
-.site-foot img{height:22px;width:auto;display:block}
+.site-foot .wrap{display:flex;justify-content:center}
+.site-foot img{height:16px;width:auto;display:block}
 @media (max-width: 900px){ .about .about-h{margin-top:20px;font-size:28px;line-height:38px} .visit .two .r.join{padding:0} }
 .visit h3.join-h{margin:24px 0 0;font-weight:400;font-size:40px;line-height:56px;letter-spacing:-.038em}
 .join-l>p:not(.fine){margin-top:24px}
@@ -541,7 +542,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     <div class="l"><div class="eyebrow about-eb">ABOUT</div><h2 class="about-h" id="ab-h">함께 모여 시작한 대화,<br>이번엔 엑스포 무대로.</h2></div>
     <div class="r">
       <p>롱진은 ‘건강하게 오래 사는 삶’을 주제로, 의사·연구자·전문가와 함께 건강수명 정보를 대중의 언어로 풀어 온 미디어이자 커뮤니티입니다. 화면 밖에서는 모닝토크와 롱진콘(롱진 토크 콘서트)을 열어, 정보를 읽는 데서 그치지 않고 사람들이 직접 모여 함께 실천하는 자리를 만들어 왔습니다. 알게 된 것을 각자의 일상에서 지켜 가는 사람들이 롱진과 함께하고 있습니다.</p>
-      <p>이번 롱진콘은 2026 웰니스&amp;마인드케어 엑스포의 공식 파트너로 롱진이 직접 기획한 특별 무대입니다. 사흘 동안 강연과 토크, 함께 움직이는 액티비티로 움직임과 식사, 수면, 피부, 마음까지 이야기하며, 정보를 넘어 오래 건강하게 살아가는 문화를 함께 만듭니다.</p>
+      <p>이번 롱진콘은 2026 웰니스&amp;마인드케어 엑스포의 공식 파트너로 롱진이 직접 기획한 특별 무대입니다. 사흘 동안 강연과 토크, 함께 움직이는 액티비티로 운동과 식사, 수면, 피부, 마음까지 이야기하며, 정보를 넘어 오래 건강하게 살아가는 문화를 함께 만듭니다.</p>
       <div class="ig-links"><a href="https://www.instagram.com/long.zine/" target="_blank" rel="noopener">롱진 @long.zine ↗</a><a href="https://www.instagram.com/long.zine.and.more/" target="_blank" rel="noopener">롱진앤모어 @long.zine.and.more ↗</a></div>
       <div class="credits lockup about-lockup"><img class="lk-expo" src="img/expo.svg" alt="Wellness &amp; Mind Care Expo"><span class="x" aria-hidden="true">×</span><img class="lk-lz" src="img/lz_logo.svg" alt="Longzine"></div>
     </div>
@@ -566,13 +567,13 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     SLEEP:'<path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/>',
     SKIN:'<path d="M12 2.5c3.6 4.4 7 7.8 7 11.8a7 7 0 0 1-14 0c0-4 3.4-7.4 7-11.8z"/><path d="M8.8 14.8a3.3 3.3 0 0 0 2.8 3.2"/>',
     MIND:'<path d="M12 4.5c2.2 2.6 2.2 7.8 0 10.5-2.2-2.7-2.2-7.9 0-10.5z"/><path d="M12 15c-3.2-.4-6.8-2.6-8-6.6 3.4-.2 6.6 2 8 6.6z"/><path d="M12 15c3.2-.4 6.8-2.6 8-6.6-3.4-.2-6.6 2-8 6.6z"/><path d="M4.5 18c2.4 1.2 4.9 1.8 7.5 1.8s5.1-.6 7.5-1.8"/>'};
-  const KO={MOVE:'움직임',EAT:'식사',SLEEP:'수면',SKIN:'피부',MIND:'마음'};
+  const KO={MOVE:'운동',EAT:'식사',SLEEP:'수면',SKIN:'피부',MIND:'마음'};
   const svg=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[k]}</svg>`;
   // positions from the Figma 1280x800 stage (chip centers)
   const NODES=[['MOVE',116,268,'L'],['MIND',156,452,'L'],['EAT',116,548,'L'],['SLEEP',1164,268,'R'],['SKIN',1164,548,'R']];
   const nodes=document.getElementById('nodes');
   nodes.innerHTML=NODES.map(([k,x,y,s])=>`<div class="node ${s==='R'?'right':''}" style="left:${x/12.8}%;top:${y/8}%"><span class="chip">${svg(k)}</span><span class="t"><span class="k">${k}</span><span class="ko">${KO[k]}</span></span></div>`).join('');
-  const KOM={MOVE:'움직임',EAT:'식사',SLEEP:'수면',SKIN:'피부',MIND:'마음'};
+  const KOM={MOVE:'운동',EAT:'식사',SLEEP:'수면',SKIN:'피부',MIND:'마음'};
   document.getElementById('pillarsM').innerHTML=['MOVE','EAT','SLEEP','SKIN','MIND'].map(k=>`<span><i class="chip">${svg(k)}</i>${KOM[k]}</span>`).join('');
 
   // timetable
