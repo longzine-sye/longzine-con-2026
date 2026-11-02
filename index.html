@@ -430,7 +430,7 @@ footer .r{text-align:right;color:rgba(255,255,255,.8)}
 /* mic cursor + sparkles (mouse only) */
 @media (pointer: fine){
   html,body{cursor:url(img/cursor_mic.png) 3 2,auto;cursor:-webkit-image-set(url(img/cursor_mic.png) 1x,url(img/cursor_mic@2x.png) 2x) 3 2,auto;cursor:image-set(url(img/cursor_mic.png) 1x,url(img/cursor_mic@2x.png) 2x) 3 2,auto}
-  a,button,summary,label,[role=button],[role=tab],.arrow,.scroll-cue,.day-head{cursor:url(img/cursor_pointer.png) 4 1,pointer;cursor:-webkit-image-set(url(img/cursor_pointer.png) 1x,url(img/cursor_pointer@2x.png) 2x) 4 1,pointer;cursor:image-set(url(img/cursor_pointer.png) 1x,url(img/cursor_pointer@2x.png) 2x) 4 1,pointer}
+  html :is(a,button,summary,label,[role=button],[role=tab],.arrow,.scroll-cue,.day-head,.s-det summary,.day-tabs button):not(:disabled){cursor:url(img/cursor_pointer.png) 4 1,pointer;cursor:-webkit-image-set(url(img/cursor_pointer.png) 1x,url(img/cursor_pointer@2x.png) 2x) 4 1,pointer;cursor:image-set(url(img/cursor_pointer.png) 1x,url(img/cursor_pointer@2x.png) 2x) 4 1,pointer}
   .arrow:disabled{cursor:default}
 }
 .spark{position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);animation:spark .8s ease-out forwards;filter:drop-shadow(0 0 4px rgba(255,255,255,.55))}
@@ -541,7 +541,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     <div class="l"><div class="eyebrow about-eb">ABOUT</div><h2 class="about-h" id="ab-h">함께 모여 시작한 대화,<br>이번엔 엑스포 무대로.</h2></div>
     <div class="r">
       <p>롱진은 ‘건강하게 오래 사는 삶’을 주제로, 의사·연구자·전문가와 함께 건강수명 정보를 대중의 언어로 풀어 온 미디어이자 커뮤니티입니다. 화면 밖에서는 모닝토크와 롱진콘(롱진 토크 콘서트)을 열어, 정보를 읽는 데서 그치지 않고 사람들이 직접 모여 함께 실천하는 자리를 만들어 왔습니다. 알게 된 것을 각자의 일상에서 지켜 가는 사람들이 롱진과 함께하고 있습니다.</p>
-      <p>이번 롱진콘은 2026 웰니스&amp;마인드케어 엑스포의 공식 파트너로 롱진이 직접 기획한 특별 무대입니다. 사흘 동안 강연과 토크, 함께 움직이는 액티비티로 건강수명 정보를 오늘의 습관으로 바꿉니다.</p>
+      <p>이번 롱진콘은 2026 웰니스&amp;마인드케어 엑스포의 공식 파트너로 롱진이 직접 기획한 특별 무대입니다. 사흘 동안 강연과 토크, 함께 움직이는 액티비티로 움직임과 식사, 수면, 피부, 마음까지 이야기하며, 정보를 넘어 오래 건강하게 살아가는 문화를 함께 만듭니다.</p>
       <div class="ig-links"><a href="https://www.instagram.com/long.zine/" target="_blank" rel="noopener">롱진 @long.zine ↗</a><a href="https://www.instagram.com/long.zine.and.more/" target="_blank" rel="noopener">롱진앤모어 @long.zine.and.more ↗</a></div>
       <div class="credits lockup about-lockup"><img class="lk-expo" src="img/expo.svg" alt="Wellness &amp; Mind Care Expo"><span class="x" aria-hidden="true">×</span><img class="lk-lz" src="img/lz_logo.svg" alt="Longzine"></div>
     </div>
