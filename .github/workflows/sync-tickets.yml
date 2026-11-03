@@ -1,0 +1,26 @@
+name: Sync ticket status
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency: sync-tickets
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Read ticket page
+        run: python scripts/sync_tickets.py status.json
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- status.json; then echo "no change"; exit 0; fi
+          git config user.name "longzine-status-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add status.json
+          git commit -m "status: ticket page sync"
+          git push
