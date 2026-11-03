@@ -558,6 +558,9 @@ a.l-card{display:block;color:#fff;text-decoration:none}
   background:radial-gradient(120% 80% at 0% 0%,rgba(255,255,255,.16),rgba(255,255,255,0) 55%),
              linear-gradient(135deg,rgba(255,170,190,.10),rgba(160,200,255,0) 30%,rgba(160,200,255,0) 75%,rgba(160,200,255,.08))}
 .visit .jc.jc-main p{color:#fff}
+
+/* SMCC separate recruitment (11.03) */
+.s-sep{display:inline-flex;align-items:center;gap:6px;font-size:13px;line-height:18px;font-weight:600;color:var(--c-strong,#4A1418);padding:7px 12px;border-radius:999px;border:1px dashed rgba(74,20,24,.45)}
 </style>
 
 <script>
@@ -722,18 +725,19 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
    '롱제비티의 역사':'인류는 언제부터 오래 사는 법을 고민해 왔을까요. 롱제비티를 향한 오랜 여정을 이낙준 작가와 함께 따라가 봅니다.'};
   const D=[
    {d:'11.20',en:'FRIDAY',ko:'금요일',s:[
-    {t:'09:30–11:00',ti:'SMCC Book Dive ‘이로운 식사법’',tc:1,c:'90분',sp:[['SMCC'],['고경하']],nm:'SMCC · 고경하',sa:'SMCC · 슈리베다 원장'},
+    {t:'09:30–11:00',ti:'SMCC Book Dive ‘이로운 식사법’',tc:1,sep:1,c:'90분',sp:[['SMCC'],['고경하']],nm:'SMCC · 고경하',sa:'SMCC · 슈리베다 원장'},
     {t:'11:30–12:20',ph:1},
     {t:'13:30–14:20',ph:1},
     {t:'14:40–15:30',ti:'웰니스 커뮤니티, 비즈니스가 되다',tc:1,c:'CEO 세션',sp:[['김록'],['찰리'],['박재현']],nm:'김록 · 찰리 · 박재현',sa:'1,000 CAL CLUB · 롱진 · SMCC'},
     {t:'16:00–16:50',ti:'틈새운동 (Exercise Snacking)',tc:1,c:'50분',sp:[['홍정기']],nm:'홍정기',sa:'교수 · 데이스쿼트'}]},
    {d:'11.21',en:'SATURDAY',ko:'토요일',s:[
-    {t:'09:30–11:00',ti:'에블바레와 함께하는 SMCC 바레',tc:1,c:'90분',sp:[['SMCC']],nm:'SMCC',sa:'함께 움직이는 액티비티'},
+    {t:'09:30–11:00',ti:'에블바레와 함께하는 SMCC 바레',tc:1,sep:1,c:'90분',sp:[['SMCC']],nm:'SMCC',sa:'함께 움직이는 액티비티'},
     {t:'12:20–13:20',ph:1},
     {t:'13:40–14:40',ph:1},
     {t:'15:00–16:00',ph:1},
     {t:'16:20–17:40',ph:1}]},
    {d:'11.22',en:'SUNDAY',ko:'일요일',s:[
+    {t:'09:30–10:30',tbd:1,sep:1,c:'60분',sp:[['SMCC']],nm:'SMCC',sa:'요가 세션'},
     {t:'11:20–12:20',tbd:1,c:'60분',sp:[['노경한'],['스페셜 게스트']],nm:'노경한 · 스페셜 게스트',sa:'정형외과 전문의'},
     {t:'12:40–13:40',ti:'롱제비티의 역사',tc:1,c:'60분',sp:[['이낙준']],nm:'이낙준',sa:'작가 · 이비인후과 전문의'},
     {t:'14:00–15:20',tbd:1,c:'80분',sp:[['우창윤'],['스페셜 게스트']],nm:'우창윤 · 스페셜 게스트',sa:'내분비내과 전문의 · 게스트 추후 공개'},
@@ -751,7 +755,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
       sp=`<div class="s-sp${names.length>1?' multi':''}"><span class="avs">${names.slice(0,3).map(av).join('')}</span><span class="sp-t"><span class="sp-n">${esc(s.nm)}</span>${s.sa?`<span class="sp-a">${esc(s.sa)}</span>`:''}</span></div>`; }
     const title=s.tbd?'주제 추후 공개':s.ti;
     const desc=s.tc&&DESC[s.ti]?`<p class="s-desc">${DESC[s.ti]}</p>`:'';
-    return `<article class="s-card"><div class="s-row"><span class="s-time">${s.t}</span>${s.c?`<span class="s-chip">${s.c}</span>`:''}</div><div class="s-head"><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4></div>${sp}<div class="s-foot">${desc}<a class="s-book" href="${BOOK}" target="_blank" rel="noopener">이 세션 예약하기 ↗</a></div></article>`;}).join('')}</div>`).join('');
+    return `<article class="s-card"><div class="s-row"><span class="s-time">${s.t}</span>${s.c?`<span class="s-chip">${s.c}</span>`:''}</div><div class="s-head"><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4></div>${sp}<div class="s-foot">${desc}${s.sep?`<span class="s-sep">SMCC 별도 모집 세션입니다</span>`:`<a class="s-book" href="${BOOK}" target="_blank" rel="noopener">이 세션 예약하기 ↗</a>`}</div></article>`;}).join('')}</div>`).join('');
 
   // day filter
   const daysEl=document.getElementById('days');
