@@ -126,9 +126,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   radial-gradient(ellipse 70% 14% at 100% 14%,rgba(201,99,106,.35),rgba(201,99,106,0) 100%),
   radial-gradient(ellipse 62% 14% at 0% 37%,rgba(154,42,52,.45),rgba(154,42,52,0) 100%),
   radial-gradient(ellipse 70% 14% at 85% 57%,rgba(154,42,52,.4),rgba(154,42,52,0) 100%),
-  radial-gradient(ellipse 70% 14% at 15% 88%,rgba(201,99,106,.14),rgba(201,99,106,0) 100%),
-  radial-gradient(ellipse 78% 11% at 90% 103%,rgba(203,101,102,.18),rgba(203,101,102,0) 100%),
-  linear-gradient(180deg,#9D393E 0%,#5A1420 9%,#14030A 20%,#3A0610 34%,#6E1622 47%,#24040A 64%,#2E0811 82%,#4A1018 100%)}
+  radial-gradient(ellipse 70% 14% at 15% 88%,rgba(201,99,106,0),rgba(201,99,106,0) 100%),
+  radial-gradient(ellipse 78% 11% at 90% 103%,rgba(203,101,102,0),rgba(203,101,102,0) 100%),
+  linear-gradient(180deg,#9D393E 0%,#5A1420 9%,#14030A 20%,#3A0610 34%,#6E1622 47%,#24040A 64%,#14050A 80%,#0B0909 92%,#0B0909 100%)}
 section.block{padding-block:120px}
 .eyebrow{display:flex;align-items:center;gap:8px;font-size:12px;line-height:16px;color:rgba(255,255,255,.85)}
 .eyebrow::before{content:"";width:8px;height:8px;border-radius:1px;background:#E3262E;flex:none}
@@ -391,7 +391,7 @@ footer .r{text-align:right;color:rgba(255,255,255,.8)}
 .join-r .cd-box{margin-top:0;padding:28px 32px;gap:10px}
 .join-r .cd-box .cd{font-size:48px;line-height:56px}
 .join-r .cd-l{font-size:14px;line-height:20px}
-@media (max-width: 900px){ .visit .two .r.join{grid-template-columns:1fr;gap:24px;padding:28px 24px} .join-r{order:-1} .join-r .cd-box{padding:20px} .join-r .cd-box .cd{font-size:30px;line-height:38px} }
+@media (max-width: 900px){ .visit .two .r.join{grid-template-columns:1fr;gap:24px;padding:28px 24px}  .join-r .cd-box{padding:20px} .join-r .cd-box .cd{font-size:30px;line-height:38px} }
 .ig-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px}
 .ig-links a{color:rgba(255,255,255,.85);font-size:16px;line-height:24px;text-decoration:none}
 .ig-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
@@ -501,6 +501,52 @@ a.l-card{display:block;color:#fff;text-decoration:none}
 /* JOIN US step labels (11.03) */
 .jc-k{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-ko);font-size:13px;letter-spacing:0;color:rgba(255,255,255,.8)}
 .jc-k em{font-style:normal;font-family:var(--font-en);font-weight:600;font-size:11px;letter-spacing:.08em;padding:3px 8px;border-radius:999px;background:#E3262E;color:#fff}
+
+/* JOIN US highlight: black band (11.03) */
+.jc mark.hl{background:rgba(255,255,255,.14);color:#fff;padding:2px 6px;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* Timetable sync with Figma (11.03): speakers beside avatars, sessions count on date row */
+@media (min-width: 901px){
+  .day-top{flex-direction:row!important;align-items:baseline!important}
+  .s-sp.multi{flex-direction:row;align-items:center;gap:16px}
+  .s-sp .sp-t{min-width:0}
+}
+
+@media (max-width: 900px){ .ab-close .ab-expo br{display:none} }
+
+/* JOIN US: near-black + digital countdown (11.03) */
+@font-face{font-family:'DSEG7';src:url(fonts/DSEG7Classic-Bold.woff2) format('woff2');font-weight:700;font-display:swap}
+.join-r .cd7-box{background:none;border:0;padding:0;gap:16px;align-items:flex-start}
+.cd7{display:flex;align-items:flex-start;gap:12px;font-family:'DSEG7',var(--font-en);font-weight:700}
+.cd7 .g{display:flex;flex-direction:column;align-items:center;gap:12px}
+.cd7 .n{position:relative;display:block;font-size:56px;line-height:56px;color:#fff;font-style:normal}
+.cd7 .n::before{content:'88';position:absolute;inset:0;color:rgba(255,255,255,.07)}
+.cd7 .dd .n{color:#FF3D44;text-shadow:0 0 18px rgba(255,61,68,.45)}
+.cd7 .dd .lb{color:#FF3D44}
+.cd7 .lb{font-family:var(--font-en);font-weight:500;font-size:11px;line-height:14px;letter-spacing:.24em;color:rgba(255,255,255,.55)}
+.cd7 .c{font-size:40px;line-height:56px;color:rgba(255,255,255,.45)}
+.jc{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.1)}
+.cd-closed .cd7{font-family:var(--font-ko);font-size:24px}
+@media (max-width: 900px){ .cd7{gap:6px} .cd7 .n{font-size:34px;line-height:38px} .cd7 .c{font-size:24px;line-height:38px} .cd7 .g{gap:8px} .cd7 .lb{font-size:10px;letter-spacing:.16em} }
+
+/* timetable notice: no highlight (11.03) */
+.tt-hl mark.hl{background:none;padding:0;color:rgba(255,255,255,.9)}
+
+/* JOIN US: separate products, 롱진콘 first (11.03) */
+.jc-k em{text-transform:none}
+.jc-sub .jc-k em{background:none;border:1px solid rgba(255,255,255,.5);color:#fff}
+.jc-main{background:rgba(255,255,255,.06)!important;border-color:rgba(255,255,255,.22)!important}
+.jc .jc-btn-sub{display:inline-flex;align-items:center;gap:6px;padding:13px 23px;border-radius:999px;border:1px solid rgba(255,255,255,.6);color:#fff;background:none;font-size:16px;line-height:20px;font-weight:600;text-decoration:none}
+.jc .jc-btn-sub:hover{background:rgba(255,255,255,.08)}
+@media (max-width: 900px){ .jc .jc-btn-sub{font-size:14px;line-height:18px;padding:9px 17px} }
+.visit .jc p{word-break:keep-all}
+.jc .jc-en{margin-top:-8px;font-family:var(--font-en);font-size:12px;line-height:16px;letter-spacing:.08em;color:rgba(255,255,255,.55)}
+
+/* JOIN US: note beside CTA (11.03) */
+.jc .jc-act{margin-top:auto;display:flex;align-items:center;flex-wrap:wrap;gap:12px 16px;padding-top:8px}
+.jc .jc-act .jc-btn{margin-top:0}
+.jc .jc-note{font-size:14px;line-height:20px;color:rgba(255,255,255,.7)}
+@media (max-width: 900px){ .jc .jc-note{font-size:13px} }
 </style>
 
 <script>
@@ -581,7 +627,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 <section class="block" id="program" aria-labelledby="tt-h">
   <div class="wrap">
     <div class="sec-head">
-      <div><div class="eyebrow">3일의 프로그램</div><h2 class="h-display" id="tt-h">TIMETABLE</h2></div>
+      <div><h2 class="h-display" id="tt-h">TIMETABLE</h2></div>
     </div>
     <p class="tt-hl"><mark class="hl">웰니스&amp;마인드케어 엑스포 사전 신청을 통해 롱진콘 신청이 가능합니다.</mark> <a href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">사전 신청하기 ↗</a></p>
     <div class="day-tabs" id="dayTabs" role="tablist" aria-label="날짜 선택"></div>
@@ -607,17 +653,17 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
   <div class="wrap two">
     <div class="l"><div class="eyebrow about-eb">ABOUT</div><h2 class="about-h" id="ab-h">함께 모여 시작한 대화,<br>이번엔 엑스포 무대로.</h2></div>
     <div class="r ab-intro">
-      <p>롱진은 <b>‘건강하게 오래 사는 삶’</b>을 주제로, 의사·연구자·전문가와 함께 건강수명 정보를 대중의 언어로 풀어 온 미디어이자 커뮤니티입니다.</p>
-      <p>검증된 과학 기반의 정보를 전하는 데서 그치지 않고, 일상에서 궁금한 것을 전문가에게 직접 묻고 함께 이야기 나눌 수 있는 자리를 만들어 왔습니다.</p>
+      <p>롱진은 건강하게 오래 사는 삶, 롱제비티를 주제로 하는 미디어이자 커뮤니티입니다.</p>
+      <p>의사와 연구자가 전하는 과학적 근거를 누구나 이해할 수 있는 말로 풀어 전하고, 일상의 궁금증을 전문가에게 직접 묻고 답을 들을 수 있는 자리를 만들어 왔습니다.</p>
       <div class="ig-links"><a href="https://www.instagram.com/long.zine/" target="_blank" rel="noopener">롱진 @long.zine ↗</a><a href="https://www.instagram.com/long.zine.and.more/" target="_blank" rel="noopener">롱진앤모어 @long.zine.and.more ↗</a></div>
     </div>
     <div class="ab-formats">
-      <div class="ab-row"><div class="ab-mark mt"><img src="img/morningtalk_logo.svg" alt="MORNING TALK 모닝토크" width="180" height="66"></div><p>매일 아침 카페에 모여 롱진 닥터와 마주 앉아, <br>함께 건강 이야기를 묻고 나누는 모임, <b>모닝토크</b>.</p></div>
-      <div class="ab-row"><div class="ab-mark lzc" data-logo></div><p>그리고 아침마다 쌓여 온 인사이트와 지식, 대화를 <br>더 많은 사람들과 나누기 위한 <b>롱진콘</b> <small>롱진 토크 콘서트</small>.</p></div>
+      <div class="ab-row"><div class="ab-mark mt"><img src="img/morningtalk_logo.svg" alt="MORNING TALK 모닝토크" width="180" height="66"></div><p>매일 아침 카페에서 롱진 닥터와 마주 앉아 건강을 주제로 대화하는 모임, <b>모닝토크</b>.</p></div>
+      <div class="ab-row"><div class="ab-mark lzc" data-logo></div><p>아침마다 쌓여 온 인사이트와 지식을 더 많은 사람과 나누는 무대, <b>롱진콘</b></p></div>
     </div>
     <div class="r ab-close">
-      <p class="ab-expo">롱진은 <b>2026 WELLNESS &amp; MIND CARE EXPO</b>의 공식 파트너로 코엑스에서 특별한 롱진콘을 선보입니다.</p>
-      <p>사흘 동안 강연과 토크, 함께 움직이는 액티비티로 <b>운동과 영양, 수면, 피부, 마음</b>까지 이야기하며, 정보를 넘어 <b>‘오래 건강하게 잘 살아가는’</b> 문화를 함께 만듭니다.</p>
+      <p class="ab-expo">롱진은 <b>2026 WELLNESS &amp; MIND CARE EXPO</b>의 공식 파트너로 <br>코엑스에서 롱진콘을 선보입니다.</p>
+      <p>사흘 동안 강연과 토크, 직접 몸을 움직이는 액티비티를 통해 운동, 영양, 수면, 피부, 마음 다섯 가지 주제를 다룹니다. 현장에서 듣고 경험한 것이 일상의 습관이 되도록, 관람객과 함께 롱제비티 문화를 만들어 갑니다.</p>
       <div class="credits lockup about-lockup"><img class="lk-expo" src="img/expo.svg" alt="Wellness &amp; Mind Care Expo"><span class="x" aria-hidden="true">×</span><img class="lk-lz" src="img/lz_logo.svg" alt="Longzine"></div>
     </div>
   </div>
@@ -625,10 +671,10 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 
 <section class="block visit" id="visit" aria-label="방문 안내" style="padding-block:96px">
   <div class="wrap two">
-    <div class="r join"><div class="join-l"><div class="eyebrow about-eb">JOIN US</div><h3 class="join-h">사전 신청 한 번으로<br>엑스포 입장과 롱진콘까지.</h3></div><div class="join-r"><div class="cd-box"><span class="cd-l">무료 사전 신청 마감까지 <em>11.19(목) 18:00</em></span><div class="cd" data-cd aria-live="off">D-00 · 00:00:00</div></div></div>
+    <div class="r join"><div class="join-l"><div class="eyebrow about-eb">JOIN US</div><h3 class="join-h">사전 신청 한 번으로<br>엑스포 입장과 롱진콘까지.</h3></div><div class="join-r"><div class="cd-box cd7-box"><span class="cd-l">무료 사전 신청 마감까지 <em>11.19(목) 18:00</em></span><div class="cd7" data-cd7 role="timer" aria-live="off"><div class="g dd"><span class="n" data-u="d">00</span><span class="lb">DAYS</span></div><span class="c">:</span><div class="g"><span class="n" data-u="h">00</span><span class="lb">HR</span></div><span class="c">:</span><div class="g"><span class="n" data-u="m">00</span><span class="lb">MIN</span></div><span class="c">:</span><div class="g"><span class="n" data-u="s">00</span><span class="lb">SEC</span></div></div></div></div>
       <div class="join-cards">
-        <div class="jc"><span class="jc-k"><em>STEP 1</em>먼저 사전 신청</span><h4>2026 웰니스&amp;마인드케어 엑스포</h4><p>온라인으로 사전 신청하면 엑스포에 <b>무료로 입장</b>할 수 있어요.</p><span class="jc-m">현장 등록 시 1인 10,000원</span><a class="btn-primary jc-btn" href="https://mindwellexpo.com/guide/sub02#ticket" target="_blank" rel="noopener">엑스포 무료 사전 신청 ↗</a></div>
-        <div class="jc"><span class="jc-k"><em>STEP 2</em>듣고 싶은 세션 예매</span><h4>롱진콘 세션 예매</h4><p><mark class="hl">엑스포 사전 신청을 통해 롱진콘 세션을 예매</mark>할 수 있어요.<br>듣고 싶은 세션을 골라 세션별로 개별 예매해 주세요.</p><span class="jc-m">세션마다 80석</span><a class="btn-primary jc-btn" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">롱진콘 예매하기 ↗</a></div>
+        <div class="jc jc-main"><h4>롱진콘 세션 예매</h4><span class="jc-en">LONGZINE TALK CONCERT</span><p>엑스포 사전 신청 페이지에서 듣고 싶은 세션을 골라 예매해 주세요.</p><div class="jc-act"><a class="btn-primary jc-btn" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">롱진콘 예매하기 ↗</a><span class="jc-note">세션마다 80석</span></div></div>
+        <div class="jc jc-sub"><h4>엑스포만 관람하기</h4><span class="jc-en">2026 WELLNESS &amp; MIND CARE EXPO</span><p>사전 신청하면 <b>무료 입장</b>. <b>롱제비티존</b>에서 롱제비티 브랜드들도 만나보세요.</p><div class="jc-act"><a class="btn-ghost jc-btn jc-btn-sub" href="https://mindwellexpo.com/guide/sub02#ticket" target="_blank" rel="noopener">엑스포 무료 사전 신청 ↗</a><span class="jc-note">현장 등록 시 1인 10,000원</span></div></div>
       </div></div>
   </div>
 </section>
@@ -833,6 +879,15 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 <script>
 /* reuse the hero 롱진콘 logo in ABOUT */
 (function(){ const src=document.querySelector('.logo-xl'); document.querySelectorAll('[data-logo]').forEach(el=>{ if(!src) return; const c=src.cloneNode(true); c.removeAttribute('class'); c.querySelectorAll('[id]').forEach(n=>n.removeAttribute('id')); el.appendChild(c); }); })();
+</script>
+<script>
+(()=>{const box=document.querySelector('[data-cd7]'); if(!box) return;
+ const DL=new Date('2026-11-19T18:00:00+09:00').getTime(); const p2=n=>String(n).padStart(2,'0');
+ const u={}; box.querySelectorAll('[data-u]').forEach(e=>u[e.dataset.u]=e);
+ function t(){ const ms=DL-Date.now(); if(ms<=0){ box.textContent='사전 신청 마감'; return false; }
+  const s=Math.floor(ms/1000); u.d.textContent=p2(Math.floor(s/86400)); u.h.textContent=p2(Math.floor(s%86400/3600)); u.m.textContent=p2(Math.floor(s%3600/60)); u.s.textContent=p2(s%60);
+  box.setAttribute('aria-label',`마감까지 ${Math.floor(s/86400)}일 ${Math.floor(s%86400/3600)}시간 ${Math.floor(s%3600/60)}분`); return true; }
+ if(t()){ const iv=setInterval(()=>{ if(!t()) clearInterval(iv); },1000); } })();
 </script>
 
 
