@@ -812,7 +812,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     const f=PHOTO[n]; if(!f) return `<span class="av" aria-hidden="true">${n.slice(0,1)}</span>`;
     return `<span class="av photo"><img src="img/${f}.png" alt="" loading="lazy"></span>`; };
   const dur=t=>{const m=t.match(/(\d+):(\d+)\D+(\d+):(\d+)/); if(!m) return ''; const d=(+m[3]*60+ +m[4])-(+m[1]*60+ +m[2]); return d>0?d+'분':'';};
-  const ACT={open:()=>`<a class="s-book" href="${BOOK}" target="_blank" rel="noopener">예약하기 ↗</a>`,
+  const ACT={open:()=>`<a class="s-book" href="${BOOK}" target="_blank" rel="noopener">예매하기 ↗</a>`,
     soon:()=>`<span class="c-state soon">오픈 예정</span>`,
     soldout:()=>`<span class="c-state sold">SOLD OUT</span>`,
     sep:()=>`<span class="c-state sep">SMCC 별도 모집</span>`};
@@ -826,11 +826,11 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     const title=s.tbd?'주제 추후 공개':s.ti;
     const desc=s.tc&&DESC[s.ti]?`<p class="s-desc">${DESC[s.ti]}</p>`:'';
     const st=defState(s);
-    return `<article class="s-card v2" data-slot="${s.id}" data-state="${st}"><div class="c-top">${sp}<span class="c-dur">${dur(s.t)}</span></div><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4>${s.tag?`<div class="c-tags"><span>${s.tag}</span></div>`:''}${desc}<div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b>${s.sep?'':'<span class="c-sub">세션마다 80석</span>'}</div><div class="c-act">${ACT[st]()}</div></div></article>`;}).join('')}</div>`).join('');
+    return `<article class="s-card v2" data-slot="${s.id}" data-state="${st}"><div class="c-top">${sp}<span class="c-dur">${dur(s.t)}</span></div><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4>${s.tag?`<div class="c-tags"><span>${s.tag}</span></div>`:''}${desc}<div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b><span class="c-sub">러닝타임 ${dur(s.t)}</span></div><div class="c-act">${ACT[st]()}</div></div></article>`;}).join('')}</div>`).join('');
   // live ticket status (status.json is refreshed every 30 min from the ticket page)
   function applyTT(ST){ if(!ST||!ST.slots) return;
     document.querySelectorAll('#days .s-card[data-slot]').forEach(c=>{ const x=ST.slots[c.dataset.slot]; if(!x) return;
-      if(x.time){ const tm=c.querySelector('.c-time'); if(tm) tm.textContent=x.time.replace('-', '–').replace('~','–'); const du=c.querySelector('.c-dur:not(.soon)'); if(du) du.textContent=dur(x.time); }
+      if(x.time){ const tm=c.querySelector('.c-time'); if(tm) tm.textContent=x.time.replace('-', '–').replace('~','–'); const du=c.querySelector('.c-dur:not(.soon)'); if(du) du.textContent=dur(x.time); const sb=c.querySelector('.c-sub'); if(sb) sb.textContent='러닝타임 '+dur(x.time); }
       if(c.classList.contains('ph')) return;
       let st=x.state; if(c.dataset.state==='sep') st='sep';
       if(!ACT[st]) return; c.dataset.state=st; const a=c.querySelector('.c-act'); if(a) a.innerHTML=ACT[st](); }); }
@@ -872,7 +872,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
   const cardHTML=(r,clone)=>{ const ti=clone?' tabindex="-1" aria-hidden="true"':'';
     if(r[0]==='soon') return `<a class="l-card soon" href="${BOOKL}" target="_blank" rel="noopener"${ti}><div class="l-top"><span>LINEUP</span><b>COMING SOON</b></div><div class="soon-mid"><svg viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path d="M12 1.5C12.7 7.4 16.6 11.3 22.5 12C16.6 12.7 12.7 16.6 12 22.5C11.3 16.6 7.4 12.7 1.5 12C7.4 11.3 11.3 7.4 12 1.5Z" fill="#fff"/></svg><h3>더 많은 연사가<br>곧 공개됩니다</h3></div><div class="l-bottom"><span class="l-book">롱진콘 신청하기 ↗</span></div></a>`;
     const [f,n,d,c,dt,t,[x,y,w]]=r;
-    return `<a class="l-card ${t}" href="${BOOKL}" target="_blank" rel="noopener"${ti}><div class="l-type" aria-hidden="true"><span>${WORD[f][0]}</span><span>${WORD[f][1]}</span></div><img src="img/${f}.webp" alt="${clone?'':n}" loading="lazy" style="left:${x}%;top:${y}%;width:${w}%"><div class="scrim"></div><div class="l-top"><span>${c}</span><b>${dt}</b></div><div class="l-bottom"><h3>${n}</h3><p>${d}</p><span class="l-book">예약하기 ↗</span></div></a>`; };
+    return `<a class="l-card ${t}" href="${BOOKL}" target="_blank" rel="noopener"${ti}><div class="l-type" aria-hidden="true"><span>${WORD[f][0]}</span><span>${WORD[f][1]}</span></div><img src="img/${f}.webp" alt="${clone?'':n}" loading="lazy" style="left:${x}%;top:${y}%;width:${w}%"><div class="scrim"></div><div class="l-top"><span>${c}</span><b>${dt}</b></div><div class="l-bottom"><h3>${n}</h3><p>${d}</p><span class="l-book">예매하기 ↗</span></div></a>`; };
   // 무한 루프: 같은 카드 세트를 앞·뒤로 한 벌씩 더 붙이고, 가운데 세트를 벗어나면 같은 위치의 가운데 카드로 몰래 점프
   rail.innerHTML=LV.map(c=>cardHTML(c,1)).join('')+LV.map(c=>cardHTML(c,0)).join('')+LV.map(c=>cardHTML(c,1)).join('');
   const cards=()=>rail.querySelectorAll('.l-card');
