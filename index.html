@@ -437,6 +437,66 @@ footer .r{text-align:right;color:rgba(255,255,255,.8)}
 .spark{position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);animation:spark .8s ease-out forwards;filter:drop-shadow(0 0 4px rgba(255,255,255,.55))}
 .spark svg{display:block}
 @keyframes spark{0%{opacity:1;transform:translate(-50%,-50%) scale(.4) rotate(0deg)}30%{opacity:1;transform:translate(calc(-50% + var(--dx) * .3),calc(-50% + var(--dy) * .3)) scale(1) rotate(calc(var(--r) * .5))}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.2) rotate(var(--r))}}
+.btn-ghost.btn-white{background:#fff;color:#1A0A0A;border-color:#fff;font-weight:600}
+.btn-ghost.btn-white:hover{background:var(--cream)}
+.hero-cta{display:inline-flex;margin-top:28px;pointer-events:auto}
+mark.hl{background:linear-gradient(transparent 50%,rgba(227,38,46,.7) 50%);color:inherit;padding:0 2px}
+.tt-hl{margin:20px 0 28px;font-size:15px;line-height:24px;color:#fff;word-break:keep-all}
+.tt-hl a{color:#fff;font-weight:600;margin-left:8px;text-underline-offset:4px}
+.s-title.tbd{color:var(--c-mid);font-weight:500}
+.s-foot{border-top:1px solid var(--c-line);padding-top:12px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.s-desc{margin:0;font-size:12px;line-height:19px;color:var(--c-mid);word-break:keep-all}
+.s-book{display:inline-flex;align-items:center;font-size:12px;line-height:16px;font-weight:600;padding:8px 14px;border-radius:999px;background:var(--c-strong);color:#fff;text-decoration:none}
+.s-book:hover{background:var(--c-accent)}
+a.l-card{display:block;color:#fff;text-decoration:none}
+.l-book{display:inline-block;margin-top:12px;font-size:12px;line-height:16px;font-weight:600;padding:7px 12px;border-radius:999px;background:#fff;color:#1A0A0A}
+.l-card.soon{background:radial-gradient(circle at 80% 85%,rgba(227,38,46,.55),rgba(227,38,46,0) 45%),#2A0A0D;border:1px dashed rgba(255,255,255,.45)}
+.l-card.soon .soon-mid{position:absolute;left:20px;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:16px}
+.l-card.soon h3{margin:0;font-weight:500;font-size:28px;line-height:36px}
+.visit .two .r.join{row-gap:32px}
+.join-cards{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.jc{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:32px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16)}
+.jc-k{font-family:var(--font-en);font-size:12px;letter-spacing:.16em;color:rgba(255,255,255,.7)}
+.jc h4{margin:0;font-weight:500;font-size:24px;line-height:32px;color:#fff}
+.visit .jc p{margin:0;font-size:15px;line-height:24px;color:rgba(255,255,255,.85)}
+.jc-m{font-size:13px;line-height:18px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.35);color:#fff}
+.jc .jc-btn{margin-top:auto}
+.jc .jc-k+h4{margin-top:-4px}
+@media (max-width: 900px){ .join-cards{grid-template-columns:1fr;gap:16px} .jc{padding:24px} .jc h4{font-size:20px;line-height:28px} .tt-hl{font-size:14px} .hero-cta{margin-top:20px} }
+.about b{color:#fff;font-weight:600}
+.about .ab-intro p,.about .ab-close p{font-size:16px;line-height:28px}
+.ab-formats{grid-column:1 / -1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:40px;padding:40px 0;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18)}
+.ab-row{display:contents}
+.ab-mark{grid-column:1 / span 5;display:flex;align-items:flex-end;gap:8px;color:#fff}
+.ab-row p{grid-column:7 / span 6;margin:0;align-self:center;font-size:16px;line-height:28px;color:rgba(255,255,255,.85)}
+.ab-row p small{font-size:12px;color:rgba(255,255,255,.7)}
+.ab-mark.mt img{display:block;width:180px;height:auto}
+.ab-mark.lzc svg{width:150px;height:auto;display:block}
+.ab-mark.lzc svg g{fill:#fff}
+.ab-close .ab-expo{margin-top:32px!important;padding-top:32px;border-top:1px solid rgba(255,255,255,.18)}
+@media (max-width: 900px){ .ab-mark,.ab-row p{grid-column:1 / -1} .ab-formats{row-gap:14px;padding:28px 0} .ab-row p{margin-bottom:22px} .ab-mark.mt img{width:140px} .ab-mark.lzc svg{width:120px} .ab-row p br{display:none} }
+
+/* ABOUT v3 (11.03): Figma 2-column formats, intro aligned to heading */
+.about .ab-intro{padding-top:46px}
+.about .ab-intro .ig-links{margin-top:16px;padding:16px 0 0;gap:8px 56px}
+.ab-formats{grid-template-columns:1fr 1fr;column-gap:40px;row-gap:40px}
+.ab-row{display:flex;flex-direction:column;gap:24px}
+.ab-mark{height:66px;align-items:flex-start}
+.ab-mark.mt img{width:auto;height:66px}
+.ab-mark.lzc svg{width:auto;height:66px}
+.ab-row p{max-width:540px;align-self:flex-start}
+.ab-close .ab-expo{margin-top:0!important;padding-top:0;border-top:0}
+@media (max-width: 900px){ .about .ab-intro{padding-top:0} .ab-formats{grid-template-columns:1fr;row-gap:36px;padding:32px 0} .ab-row{gap:16px} .ab-row p{margin-bottom:0} .ab-mark{height:48px} .ab-mark.mt img,.ab-mark.lzc svg{height:48px;width:auto} .about .ab-intro .ig-links{gap:8px 24px} }
+
+/* ABOUT mobile: swipe cards (11.03) */
+@media (max-width: 900px){
+  .ab-formats{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:28px 20px;margin:0 -20px;border:0;scroll-padding:0 20px}
+  .ab-formats::-webkit-scrollbar{display:none}
+  .ab-row{flex:0 0 82%;scroll-snap-align:start;gap:20px;padding:24px 20px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+  .ab-mark{height:44px}
+  .ab-mark.mt img,.ab-mark.lzc svg{height:44px;width:auto}
+  .ab-row p{font-size:15px;line-height:25px}
+}
 </style>
 
 <script>
@@ -451,7 +511,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     <nav class="nav" aria-label="주요 메뉴">
       <a href="#program">TIMETABLE</a><a href="#lineup">LINEUP</a><a href="#about">ABOUT</a><a href="#visit">VISIT</a>
     </nav>
-    <a class="btn-ghost" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">무료 사전 신청</a>
+    <a class="btn-ghost btn-white" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">무료 사전 신청</a>
   </div></div>
 </header>
 
@@ -482,6 +542,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
           <g fill="url(#lg)"><path d="M24.83,30.99v10.38h76.01v9.81h-38.71v9.96h48.66v10.1H0v-10.1h48.66v-9.96H11.36v-29.73h62.82c2.25,0,4.13-.09,5.68-.28,1.54-.19,2.76-.56,3.65-1.12.88-.56,1.52-1.34,1.9-2.31s.56-2.26.56-3.85v-2.81H11.08V1.26h88.35v8.41c0,3.09-1.05,5.56-3.16,7.43-2.1,1.87-4.75,3.32-7.93,4.35h11.08v9.53H24.83ZM55.39,117.1c-7.29,0-13.79-.4-19.49-1.19-5.71-.8-10.55-1.99-14.52-3.57-3.97-1.59-7.01-3.62-9.12-6.1-2.1-2.47-3.16-5.4-3.16-8.77s1.05-6.29,3.16-8.77c2.1-2.47,5.14-4.51,9.12-6.1,3.97-1.59,8.81-2.78,14.52-3.57,5.7-.79,12.2-1.19,19.49-1.19s13.79.4,19.49,1.19c5.7.8,10.54,1.99,14.52,3.57,3.97,1.59,7.01,3.62,9.12,6.1,2.1,2.47,3.16,5.4,3.16,8.77s-1.05,6.29-3.16,8.77c-2.1,2.47-5.15,4.51-9.12,6.1-3.97,1.59-8.81,2.78-14.52,3.57-5.71.79-12.2,1.19-19.49,1.19ZM55.39,107.57c11.87,0,20.36-.91,25.45-2.74,5.09-1.82,7.65-4.28,7.65-7.37s-2.55-5.54-7.65-7.37c-5.09-1.82-13.58-2.74-25.45-2.74-5.99,0-11.06.24-15.22.7-4.16.47-7.57,1.15-10.24,2.03-2.66.89-4.61,1.96-5.82,3.22-1.22,1.26-1.82,2.64-1.82,4.13,0,1.59.6,2.99,1.82,4.21s3.16,2.27,5.82,3.16c2.66.89,6.08,1.56,10.24,2.03s9.24.7,15.22.7v.03Z"/><path d="M121.42,52.73c4.77,0,8.57-.79,11.43-2.38,2.85-1.59,5.12-3.62,6.8-6.1,1.68-2.47,2.99-5.24,3.93-8.28.94-3.04,1.91-6,2.94-8.9s2.29-5.56,3.78-7.99c1.5-2.43,3.65-4.3,6.46-5.61h-34.5V3.22h66.62v10.24h-23.14c-1.96,0-3.46.75-4.49,2.25-1.03,1.5-1.85,3.44-2.46,5.82-.61,2.38-1.19,5.09-1.75,8.13s-1.31,6.15-2.25,9.33c2.43-3.09,5.07-5.68,7.93-7.78,2.85-2.1,6.06-3.16,9.61-3.16,2.25,0,4.37.54,6.38,1.62,2.01,1.07,3.84,2.74,5.47,4.98,1.63,2.25,2.99,5.12,4.07,8.62s1.79,7.74,2.18,12.69l.56,7.01h-13.18l-.42-6.31c-.47-7.01-1.73-12.09-3.78-15.22-2.06-3.13-4.63-4.69-7.71-4.69-5.15,0-10.33,4.3-15.56,12.9h-.14c-2.43,3.84-5.89,7.01-10.38,9.53-4.49,2.53-10.61,3.78-18.37,3.78h-2.38v-10.24h2.38-.03ZM149.05,102.8h74.47v10.38h-87.65v-39.69h13.18v29.31h0ZM220.01,0v84.56h-13.46V0h13.46Z"/><path d="M330.77,2.25v21.74c0,5.71-.77,10.49-2.31,14.37-1.54,3.88-3.57,6.99-6.1,9.33s-5.43,4.02-8.69,5.05c-3.27,1.03-6.59,1.54-9.96,1.54-3.65,0-6.62-.56-8.9-1.68-2.3-1.12-4.09-2.66-5.4-4.63v14.16h52.17v10.38h-110.79v-10.38h45.16v-19.08h13.46c.75,2.43,2.13,4.35,4.13,5.75s4.56,2.1,7.65,2.1c1.87,0,3.67-.19,5.4-.56,1.73-.37,3.29-1.12,4.69-2.25s2.59-2.69,3.57-4.69c.98-2.01,1.66-4.65,2.03-7.93l-77.27,1.82v-10.1l77.69-1.26v-13.6h-76.01V2.25h89.48ZM254.76,102.8h77.69v10.38h-91.15v-32.54h13.46v22.15h0Z"/></g>
         </svg>
         <div class="descriptor en">LONGEVITY TALK CONCERT 2026</div>
+        <a class="btn-primary hero-cta" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">롱진콘 신청하기 ↗</a>
       </div>
 
       <div id="nodes"></div>
@@ -518,6 +579,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     <div class="sec-head">
       <div><div class="eyebrow">3일의 프로그램</div><h2 class="h-display" id="tt-h">TIMETABLE</h2></div>
     </div>
+    <p class="tt-hl"><mark class="hl">웰니스&amp;마인드케어 엑스포 사전 신청을 통해 롱진콘 신청이 가능합니다.</mark> <a href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">사전 신청하기 ↗</a></p>
     <div class="day-tabs" id="dayTabs" role="tablist" aria-label="날짜 선택"></div>
     <div class="days" id="days"></div>
     <p class="note">세션명과 연사는 사정에 따라 변경될 수 있습니다. 추가 연사와 스페셜 게스트는 순차적으로 공개됩니다.</p>
@@ -540,10 +602,18 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 <section class="block about" id="about" aria-labelledby="ab-h">
   <div class="wrap two">
     <div class="l"><div class="eyebrow about-eb">ABOUT</div><h2 class="about-h" id="ab-h">함께 모여 시작한 대화,<br>이번엔 엑스포 무대로.</h2></div>
-    <div class="r">
-      <p>롱진은 ‘건강하게 오래 사는 삶’을 주제로, 의사·연구자·전문가와 함께 건강수명 정보를 대중의 언어로 풀어 온 미디어이자 커뮤니티입니다. 화면 밖에서는 모닝토크와 롱진콘(롱진 토크 콘서트)을 열어, 정보를 읽는 데서 그치지 않고 사람들이 직접 모여 함께 실천하는 자리를 만들어 왔습니다. 알게 된 것을 각자의 일상에서 지켜 가는 사람들이 롱진과 함께하고 있습니다.</p>
-      <p>이번 롱진콘은 2026 웰니스&amp;마인드케어 엑스포의 공식 파트너로 롱진이 직접 기획한 특별 무대입니다. 사흘 동안 강연과 토크, 함께 움직이는 액티비티로 운동과 식사, 수면, 피부, 마음까지 이야기하며, 정보를 넘어 오래 건강하게 살아가는 문화를 함께 만듭니다.</p>
+    <div class="r ab-intro">
+      <p>롱진은 <b>‘건강하게 오래 사는 삶’</b>을 주제로, 의사·연구자·전문가와 함께 건강수명 정보를 대중의 언어로 풀어 온 미디어이자 커뮤니티입니다.</p>
+      <p>검증된 과학 기반의 정보를 전하는 데서 그치지 않고, 일상에서 궁금한 것을 전문가에게 직접 묻고 함께 이야기 나눌 수 있는 자리를 만들어 왔습니다.</p>
       <div class="ig-links"><a href="https://www.instagram.com/long.zine/" target="_blank" rel="noopener">롱진 @long.zine ↗</a><a href="https://www.instagram.com/long.zine.and.more/" target="_blank" rel="noopener">롱진앤모어 @long.zine.and.more ↗</a></div>
+    </div>
+    <div class="ab-formats">
+      <div class="ab-row"><div class="ab-mark mt"><img src="img/morningtalk_logo.svg" alt="MORNING TALK 모닝토크" width="180" height="66"></div><p>매일 아침 카페에 모여 롱진 닥터와 마주 앉아, <br>함께 건강 이야기를 묻고 나누는 모임, <b>모닝토크</b>.</p></div>
+      <div class="ab-row"><div class="ab-mark lzc" data-logo></div><p>그리고 아침마다 쌓여 온 인사이트와 지식, 대화를 <br>더 많은 사람들과 나누기 위한 <b>롱진콘</b> <small>롱진 토크 콘서트</small>.</p></div>
+    </div>
+    <div class="r ab-close">
+      <p class="ab-expo">롱진은 <b>2026 WELLNESS &amp; MIND CARE EXPO</b>의 공식 파트너로 코엑스에서 특별한 롱진콘을 선보입니다.</p>
+      <p>사흘 동안 강연과 토크, 함께 움직이는 액티비티로 <b>운동과 영양, 수면, 피부, 마음</b>까지 이야기하며, 정보를 넘어 <b>‘오래 건강하게 잘 살아가는’</b> 문화를 함께 만듭니다.</p>
       <div class="credits lockup about-lockup"><img class="lk-expo" src="img/expo.svg" alt="Wellness &amp; Mind Care Expo"><span class="x" aria-hidden="true">×</span><img class="lk-lz" src="img/lz_logo.svg" alt="Longzine"></div>
     </div>
   </div>
@@ -551,7 +621,11 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 
 <section class="block visit" id="visit" aria-label="방문 안내" style="padding-block:96px">
   <div class="wrap two">
-    <div class="r join"><div class="join-l"><div class="eyebrow about-eb">JOIN US</div><h3 class="join-h">사전 신청하면<br>엑스포 입장이 무료.</h3><p>온라인으로 사전 신청하면 2026 웰니스&amp;마인드케어 엑스포에 무료로 입장할 수 있어요.<br>(현장 등록 시 1인 10,000원)</p><p class="fine">* 롱진콘 세션은 세션별로 참가비가 다를 수 있습니다.</p><a class="btn-primary cd-cta" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">무료 사전 신청하기 ↗</a></div><div class="join-r"><div class="cd-box"><span class="cd-l">무료 사전 신청 마감까지 <em>11.19(목) 18:00</em></span><div class="cd" data-cd aria-live="off">D-00 · 00:00:00</div></div></div></div>
+    <div class="r join"><div class="join-l"><div class="eyebrow about-eb">JOIN US</div><h3 class="join-h">사전 신청 한 번으로<br>엑스포 입장과 롱진콘까지.</h3></div><div class="join-r"><div class="cd-box"><span class="cd-l">무료 사전 신청 마감까지 <em>11.19(목) 18:00</em></span><div class="cd" data-cd aria-live="off">D-00 · 00:00:00</div></div></div>
+      <div class="join-cards">
+        <div class="jc"><span class="jc-k">EXPO</span><h4>2026 웰니스&amp;마인드케어 엑스포</h4><p>온라인으로 사전 신청하면 엑스포에 <b>무료로 입장</b>할 수 있어요.</p><span class="jc-m">현장 등록 시 1인 10,000원</span><a class="btn-primary jc-btn" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">엑스포 무료 사전 신청 ↗</a></div>
+        <div class="jc"><span class="jc-k">LONGZINE CON</span><h4>롱진콘 세션 예매</h4><p><mark class="hl">엑스포 사전 신청을 통해 롱진콘 세션을 예매</mark>할 수 있어요.<br>듣고 싶은 세션을 골라 세션별로 개별 예매해 주세요.</p><span class="jc-m">세션마다 80석</span><a class="btn-primary jc-btn" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">롱진콘 예매하기 ↗</a></div>
+      </div></div>
   </div>
 </section>
 
@@ -577,34 +651,32 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
   document.getElementById('pillarsM').innerHTML=['MOVE','EAT','SLEEP','SKIN','MIND'].map(k=>`<span><i class="chip">${svg(k)}</i>${KOM[k]}</span>`).join('');
 
   // timetable
+  const BOOK='https://mindwellexpo.com/ticket/longzine';
+  // tc: 주제 확정(세션 소개 노출)  tbd: 확정이지만 주제 미정  ph: 세션 추후 공개
   const DESC={
-   'SMCC BOOK DIVE':'책 한 권을 깊이 읽고 나누는 SMCC의 아침 북클럽. 고경하 원장과 함께 롱진콘의 첫 무대를 엽니다.',
+   'SMCC Book Dive ‘이로운 식사법’':'책 한 권을 깊이 읽고 나누는 SMCC의 아침 북클럽. 고경하 원장과 함께 ‘이로운 식사법’을 이야기하며 롱진콘의 첫 무대를 엽니다.',
    '웰니스 커뮤니티, 비즈니스가 되다':'웰니스 커뮤니티를 만드는 리더들과 함께, 건강한 경험이 연결되고 문화와 비즈니스로 확장되는 과정을 나눕니다.',
    '틈새운동 (Exercise Snacking)':'따로 시간을 내지 않아도 괜찮습니다. 일상의 틈에 짧게 더하는 움직임으로 근력과 체력을 지키는 법을 알아봅니다.',
-   'SMCC 바레':'발레 동작을 응용한 바레 클래스로 함께 몸을 깨우며 토요일 아침을 엽니다.',
-   '오래, 건강하게 운동하는 법':'다치지 않고 오래 즐기는 운동. 정형외과 전문의와 프로골퍼가 평생 운동을 위한 몸 관리법을 나눕니다.',
-   '롱제비티의 역사':'인류는 언제부터 오래 사는 법을 고민해 왔을까요. 롱제비티를 향한 오랜 여정을 이낙준 작가와 함께 따라가 봅니다.',
-   '건강한 체중 관리':'내분비내과 전문의와 함께 체중과 대사 건강을 이해하고, 일상에서 건강을 바라보는 기준을 이야기합니다.',
-   '주제 추후 공개':'정신건강의학과 전문의 오진승 원장과 함께하는 세션입니다. 주제는 추후 공개됩니다.'};
-  // sp: [이름, 소속/직함]  sub: 이름 줄 아래 문구(없으면 소속을 이어 붙임)  ph: 미정(COMING SOON) 카드
+   '에블바레와 함께하는 SMCC 바레':'에블바레와 함께 발레 동작을 응용한 바레 클래스로 몸을 깨우며 토요일 아침을 엽니다.',
+   '롱제비티의 역사':'인류는 언제부터 오래 사는 법을 고민해 왔을까요. 롱제비티를 향한 오랜 여정을 이낙준 작가와 함께 따라가 봅니다.'};
   const D=[
    {d:'11.20',en:'FRIDAY',ko:'금요일',s:[
-    {t:'09:30–11:00',ti:'SMCC BOOK DIVE',c:'90분',sp:[['SMCC'],['고경하']],nm:'SMCC · 고경하',sa:'SMCC · 슈리베다 원장'},
+    {t:'09:30–11:00',ti:'SMCC Book Dive ‘이로운 식사법’',tc:1,c:'90분',sp:[['SMCC'],['고경하']],nm:'SMCC · 고경하',sa:'SMCC · 슈리베다 원장'},
     {t:'11:30–12:20',ph:1},
     {t:'13:30–14:20',ph:1},
-    {t:'14:40–15:30',ti:'웰니스 커뮤니티, 비즈니스가 되다',c:'CEO 세션',sp:[['김록'],['찰리'],['박재현']],nm:'김록 · 찰리 · 박재현',sa:'1,000 CAL CLUB · 롱진 · SMCC'},
-    {t:'16:00–16:50',ti:'틈새운동 (Exercise Snacking)',c:'50분',sp:[['홍정기']],nm:'홍정기',sa:'교수 · 데이스쿼트'}]},
+    {t:'14:40–15:30',ti:'웰니스 커뮤니티, 비즈니스가 되다',tc:1,c:'CEO 세션',sp:[['김록'],['찰리'],['박재현']],nm:'김록 · 찰리 · 박재현',sa:'1,000 CAL CLUB · 롱진 · SMCC'},
+    {t:'16:00–16:50',ti:'틈새운동 (Exercise Snacking)',tc:1,c:'50분',sp:[['홍정기']],nm:'홍정기',sa:'교수 · 데이스쿼트'}]},
    {d:'11.21',en:'SATURDAY',ko:'토요일',s:[
-    {t:'09:30–11:00',ti:'SMCC 바레',c:'90분',sp:[['SMCC']],nm:'SMCC',sa:'함께 움직이는 액티비티'},
+    {t:'09:30–11:00',ti:'에블바레와 함께하는 SMCC 바레',tc:1,c:'90분',sp:[['SMCC']],nm:'SMCC',sa:'함께 움직이는 액티비티'},
     {t:'12:20–13:20',ph:1},
     {t:'13:40–14:40',ph:1},
     {t:'15:00–16:00',ph:1},
-    {t:'16:20–17:40',ph:1,ti:'스페셜 연사 무대',sub:'연사 추후 공개'}]},
+    {t:'16:20–17:40',ph:1}]},
    {d:'11.22',en:'SUNDAY',ko:'일요일',s:[
-    {t:'11:20–12:20',ti:'오래, 건강하게 운동하는 법',c:'60분',sp:[['노경한'],['유현주']],nm:'노경한 · 유현주',sa:'정형외과 전문의 · 프로골퍼 (스페셜 게스트)'},
-    {t:'12:40–13:40',ti:'롱제비티의 역사',c:'60분',sp:[['이낙준']],nm:'이낙준',sa:'작가 · 이비인후과 전문의'},
-    {t:'14:00–15:20',ti:'건강한 체중 관리',c:'80분',sp:[['우창윤'],['스페셜 게스트']],nm:'우창윤 · 스페셜 게스트',sa:'내분비내과 전문의 · 게스트 추후 공개'},
-    {t:'15:40–17:00',ti:'주제 추후 공개',c:'80분',sp:[['오진승'],['스페셜 게스트']],nm:'오진승 · 스페셜 게스트',sa:'정신건강의학과 전문의 · 게스트 추후 공개'}]}];
+    {t:'11:20–12:20',tbd:1,c:'60분',sp:[['노경한'],['스페셜 게스트']],nm:'노경한 · 스페셜 게스트',sa:'정형외과 전문의'},
+    {t:'12:40–13:40',ti:'롱제비티의 역사',tc:1,c:'60분',sp:[['이낙준']],nm:'이낙준',sa:'작가 · 이비인후과 전문의'},
+    {t:'14:00–15:20',tbd:1,c:'80분',sp:[['우창윤'],['스페셜 게스트']],nm:'우창윤 · 스페셜 게스트',sa:'내분비내과 전문의 · 게스트 추후 공개'},
+    {t:'15:40–17:00',tbd:1,c:'80분',sp:[['오진승'],['스페셜 게스트']],nm:'오진승 · 스페셜 게스트',sa:'정신건강의학과 전문의 · 게스트 추후 공개'}]}];
   const esc=s=>s.replace(/&/g,'&amp;');
   const PHOTO={'찰리':'av_charlie','박재현':'av_park','홍정기':'av_hong','노경한':'av_noh','이낙준':'av_leenj','우창윤':'av_woo','오진승':'av_oh'};
   const av=n=>{ if(n==='SMCC') return `<span class="av logo"><img src="img/smcc.png" alt="SMCC"></span>`;
@@ -612,11 +684,13 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     const f=PHOTO[n]; if(!f) return `<span class="av" aria-hidden="true">${n.slice(0,1)}</span>`;
     return `<span class="av photo"><img src="img/${f}.png" alt="" loading="lazy"></span>`; };
   document.getElementById('days').innerHTML=D.map(day=>`<div class="day"><div class="day-head"><div class="day-top"><h3><span class="num">${day.d}</span><span class="dw">${day.ko}</span></h3><span class="cnt">${day.s.length} SESSIONS</span></div></div>${day.s.map(s=>{
-    if(s.ph) return `<article class="s-card ph"><div class="s-row"><span class="s-time">${s.t}</span><span class="s-chip soon">COMING SOON</span></div><div class="s-head"><h4 class="s-title${s.ti?' named':''}">${esc(s.ti||'세션 추후 공개')}</h4>${s.sub?`<div class="s-sub">${s.sub}</div>`:''}</div></article>`;
+    if(s.ph) return `<article class="s-card ph"><div class="s-row"><span class="s-time">${s.t}</span><span class="s-chip soon">COMING SOON</span></div><div class="s-head"><h4 class="s-title">세션 추후 공개</h4></div></article>`;
     let sp='';
     if(s.sp){ const names=s.sp.map(p=>p[0]);
       sp=`<div class="s-sp${names.length>1?' multi':''}"><span class="avs">${names.slice(0,3).map(av).join('')}</span><span class="sp-t"><span class="sp-n">${esc(s.nm)}</span>${s.sa?`<span class="sp-a">${esc(s.sa)}</span>`:''}</span></div>`; }
-    return `<article class="s-card"><div class="s-row"><span class="s-time">${s.t}</span>${s.c?`<span class="s-chip">${s.c}</span>`:''}</div><div class="s-head"><h4 class="s-title">${esc(s.ti)}</h4>${s.sub?`<div class="s-sub">${s.sub}</div>`:''}</div>${sp}<details class="s-det"><summary>세션 소개</summary><p>${DESC[s.ti]||'세션 소개는 추후 공개됩니다.'}</p></details></article>`;}).join('')}</div>`).join('');
+    const title=s.tbd?'주제 추후 공개':s.ti;
+    const desc=s.tc&&DESC[s.ti]?`<p class="s-desc">${DESC[s.ti]}</p>`:'';
+    return `<article class="s-card"><div class="s-row"><span class="s-time">${s.t}</span>${s.c?`<span class="s-chip">${s.c}</span>`:''}</div><div class="s-head"><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4></div>${sp}<div class="s-foot">${desc}<a class="s-book" href="${BOOK}" target="_blank" rel="noopener">이 세션 예약하기 ↗</a></div></article>`;}).join('')}</div>`).join('');
 
   // day filter
   const daysEl=document.getElementById('days');
@@ -637,22 +711,28 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 
   // lineup
   // 순서: 우창윤, 오진승, 이낙준, 홍정기, 변상균, 노경한, 이주희, 최예진  [사진, 이름, 직함, 분야, 날짜, 카드색(O/B/W), 사진 위치 x%,y%,폭%]
+  // 노출: 롱진 닥터 + 주제 확정 연사. hide:1 은 나중에 다시 노출할 수 있도록 데이터만 남겨 둠
   const L=[
     ['woo','우창윤','내분비내과 전문의','METABOLIC HEALTH','11.22 SUN','B',[2.38,17.10,99.11]],
     ['oh','오진승','정신건강의학과 전문의','MENTAL WELLNESS','11.22 SUN','W',[2.06,16.90,98.81]],
     ['nakjun_lu','이낙준','작가 · 이비인후과 전문의','LONGEVITY HISTORY','11.22 SUN','O',[-18.75,2.93,139.88]],
     ['hong_lu','홍정기','교수 · 데이스쿼트','EXERCISE SNACKING','11.20 FRI','B',[-4.17,14.86,117.86]],
-    ['byun','변상균','연세대 생명공학과 교수','LONGEVITY SCIENCE','11.20 FRI','O',[-10.36,17.61,108.93]],
     ['noh','노경한','정형외과 전문의','MOVEMENT','11.22 SUN','B',[2.32,16.22,95.07]],
-    ['lee','이주희','피부과 전문의','SKIN LONGEVITY','11.21 SAT','W',[-5.65,18.92,96.43]],
-    ['choi','최예진','산부인과 전문의',"WOMEN'S HEALTH",'11.21 SAT','O',[-7.53,9.50,113.10]]];
+    ['byun','변상균','연세대 생명공학과 교수','LONGEVITY SCIENCE','11.20 FRI','O',[-10.36,17.61,108.93],1],
+    ['lee','이주희','피부과 전문의','SKIN LONGEVITY','11.21 SAT','W',[-5.65,18.92,96.43],1],
+    ['choi','최예진','산부인과 전문의',"WOMEN'S HEALTH",'11.21 SAT','O',[-7.53,9.50,113.10],1]];
+  const LV=[['soon'],...L.filter(r=>!r[7])];
   const WORD={"byun": ["LONGEVITY", "SCIENCE"], "noh": ["MOVE", "MENT"], "lee": ["SKIN", "LONGEVITY"], "choi": ["WOMEN'S", "HEALTH"], "woo": ["META", "BOLIC"], "oh": ["MENTAL", "WELLNESS"], "nakjun_lu": ["LONGEVITY", "HISTORY"], "hong_lu": ["EXERCISE", "SNACKING"]};
   const rail=document.getElementById('rail');
-  const cardHTML=([f,n,d,c,dt,t,[x,y,w]],clone)=>`<article class="l-card ${t}"${clone?' aria-hidden="true"':''}><div class="l-type" aria-hidden="true"><span>${WORD[f][0]}</span><span>${WORD[f][1]}</span></div><img src="img/${f}.webp" alt="${clone?'':n}" loading="lazy" style="left:${x}%;top:${y}%;width:${w}%"><div class="scrim"></div><div class="l-top"><span>${c}</span><b>${dt}</b></div><div class="l-bottom"><h3>${n}</h3><p>${d}</p></div></article>`;
+  const BOOKL='https://mindwellexpo.com/ticket/longzine';
+  const cardHTML=(r,clone)=>{ const ti=clone?' tabindex="-1" aria-hidden="true"':'';
+    if(r[0]==='soon') return `<a class="l-card soon" href="${BOOKL}" target="_blank" rel="noopener"${ti}><div class="l-top"><span>LINEUP</span><b>COMING SOON</b></div><div class="soon-mid"><svg viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path d="M12 1.5C12.7 7.4 16.6 11.3 22.5 12C16.6 12.7 12.7 16.6 12 22.5C11.3 16.6 7.4 12.7 1.5 12C7.4 11.3 11.3 7.4 12 1.5Z" fill="#fff"/></svg><h3>더 많은 연사가<br>곧 공개됩니다</h3></div><div class="l-bottom"><span class="l-book">롱진콘 신청하기 ↗</span></div></a>`;
+    const [f,n,d,c,dt,t,[x,y,w]]=r;
+    return `<a class="l-card ${t}" href="${BOOKL}" target="_blank" rel="noopener"${ti}><div class="l-type" aria-hidden="true"><span>${WORD[f][0]}</span><span>${WORD[f][1]}</span></div><img src="img/${f}.webp" alt="${clone?'':n}" loading="lazy" style="left:${x}%;top:${y}%;width:${w}%"><div class="scrim"></div><div class="l-top"><span>${c}</span><b>${dt}</b></div><div class="l-bottom"><h3>${n}</h3><p>${d}</p><span class="l-book">예약하기 ↗</span></div></a>`; };
   // 무한 루프: 같은 카드 세트를 앞·뒤로 한 벌씩 더 붙이고, 가운데 세트를 벗어나면 같은 위치의 가운데 카드로 몰래 점프
-  rail.innerHTML=L.map(c=>cardHTML(c,1)).join('')+L.map(c=>cardHTML(c,0)).join('')+L.map(c=>cardHTML(c,1)).join('');
+  rail.innerHTML=LV.map(c=>cardHTML(c,1)).join('')+LV.map(c=>cardHTML(c,0)).join('')+LV.map(c=>cardHTML(c,1)).join('');
   const cards=()=>rail.querySelectorAll('.l-card');
-  const setW=()=>{const cs=cards(); return cs[L.length].offsetLeft-cs[0].offsetLeft;};
+  const setW=()=>{const cs=cards(); return cs[LV.length].offsetLeft-cs[0].offsetLeft;};
   const step=()=>{const cs=cards(); return cs[1].offsetLeft-cs[0].offsetLeft;};
   const jump=dx=>{ rail.style.scrollSnapType='none'; rail.scrollLeft+=dx; void rail.offsetWidth; rail.style.scrollSnapType=''; };
   const recenter=()=>{ const w=setW(); if(rail.scrollLeft<w*0.5) jump(w); else if(rail.scrollLeft>w*1.5) jump(-w); };
@@ -746,6 +826,11 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
   },{passive:true});
 })();
 </script>
+<script>
+/* reuse the hero 롱진콘 logo in ABOUT */
+(function(){ const src=document.querySelector('.logo-xl'); document.querySelectorAll('[data-logo]').forEach(el=>{ if(!src) return; const c=src.cloneNode(true); c.removeAttribute('class'); c.querySelectorAll('[id]').forEach(n=>n.removeAttribute('id')); el.appendChild(c); }); })();
+</script>
+
 
 
 </body></html>
