@@ -568,6 +568,63 @@ a.l-card{display:block;color:#fff;text-decoration:none}
 /* booking button: brand red, distinct from time (11.03) */
 .s-book{background:#D9252D;color:#fff}
 .s-book:hover{background:#B81C23}
+
+/* Timetable cards v2 (11.03): header=speaker+duration, bottom=time+action */
+#program .s-card.v2{background:#151213;color:#fff;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;gap:14px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.s-card.v2 .c-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.s-card.v2 .c-dur{flex:none;font-family:var(--font-en);font-size:13px;line-height:20px;font-weight:500;color:rgba(255,255,255,.6);white-space:nowrap;padding-top:2px}
+.s-card.v2 .c-dur.soon{color:#FF5A60;letter-spacing:.06em;font-size:11px}
+.s-card.v2 .s-sp{gap:12px;padding-top:0}
+.s-card.v2 .sp-n{color:#fff}
+.s-card.v2 .sp-a{color:rgba(255,255,255,.55)}
+.s-card.v2 .av{border-color:#151213}
+.s-card.v2 .s-title{color:#fff;font-size:18px;line-height:26px;font-weight:500}
+.s-card.v2 .s-title.tbd{color:rgba(255,255,255,.55)}
+.s-card.v2 .c-tags{display:flex;gap:6px;margin-top:-4px}
+.s-card.v2 .c-tags span{font-size:12px;line-height:16px;padding:5px 9px;border-radius:6px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.85)}
+.s-card.v2 .s-desc{color:rgba(255,255,255,.6)}
+.s-card.v2 .c-bot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:2px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)}
+.s-card.v2 .c-when{display:flex;flex-direction:column;gap:2px;min-width:0}
+.s-card.v2 .c-time{font-family:var(--font-en);font-size:20px;line-height:26px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.s-card.v2 .c-sub{font-size:12px;line-height:16px;color:rgba(255,255,255,.55)}
+.s-card.v2 .s-book{flex:none;background:#FBEDEC;color:#1A0A0B;font-size:13px;line-height:18px;padding:10px 14px;border-radius:10px}
+.s-card.v2 .s-book:hover{background:#fff}
+.s-card.v2 .c-state{flex:none;font-size:12px;line-height:16px;font-weight:600;padding:9px 12px;border-radius:10px;white-space:nowrap}
+.s-card.v2 .c-state.soon{background:rgba(255,255,255,.06);color:rgba(255,255,255,.6)}
+.s-card.v2 .c-state.sep{border:1px dashed rgba(255,255,255,.35);color:rgba(255,255,255,.8)}
+.s-card.v2 .c-state.sold{background:#2A2426;color:#FF5A60;letter-spacing:.06em}
+.s-card.v2[data-state="soldout"]{opacity:.7}
+.s-card.v2[data-state="soldout"] .c-time{text-decoration:line-through;text-decoration-color:rgba(255,255,255,.4)}
+#program .s-card.v2.ph{background:rgba(21,18,19,.45);border:1px dashed rgba(255,255,255,.25);box-shadow:none}
+.s-card.v2.ph .s-title{color:rgba(255,255,255,.75);font-size:16px}
+.s-card.v2.ph .c-bot{border-top-color:rgba(255,255,255,.12)}
+.s-card.v2.ph .c-time{color:rgba(255,255,255,.7);font-size:16px}
+@media (max-width: 900px){ .s-card.v2 .c-time{font-size:18px} }
+
+/* Timetable cards v2 — bright version (11.03) */
+#program .s-card.v2{background:#fff;color:#1A0A0B;border:1px solid rgba(74,14,18,.08);box-shadow:0 8px 24px rgba(51,0,5,.14)}
+.s-card.v2 .c-dur{color:#8C6F70}
+.s-card.v2 .sp-n{color:#1A0A0B}
+.s-card.v2 .sp-a{color:#8C6F70}
+.s-card.v2 .av{border-color:#fff}
+.s-card.v2 .s-title{color:#1A0A0B}
+.s-card.v2 .s-title.tbd{color:#9E8A8B}
+.s-card.v2 .c-tags span{background:#F4ECEB;color:#4A0E12}
+.s-card.v2 .s-desc{color:#6E5859}
+.s-card.v2 .c-bot{border-top-color:#EFE5E4}
+.s-card.v2 .c-time{color:#1A0A0B}
+.s-card.v2 .c-sub{color:#8C6F70}
+.s-card.v2 .s-book{background:#D9252D;color:#fff}
+.s-card.v2 .s-book:hover{background:#B81C23}
+.s-card.v2 .c-state.soon{background:#F4ECEB;color:#8C6F70}
+.s-card.v2 .c-state.sep{border-color:rgba(74,14,18,.35);color:#4A0E12}
+.s-card.v2 .c-state.sold{background:#1A0A0B;color:#fff}
+.s-card.v2[data-state="soldout"]{opacity:.75}
+.s-card.v2[data-state="soldout"] .c-time{text-decoration-color:rgba(26,10,11,.4)}
+#program .s-card.v2.ph{background:rgba(255,255,255,.1);border:1px dashed rgba(255,255,255,.4)}
+.s-card.v2.ph .s-title{color:#fff}
+.s-card.v2.ph .c-time{color:rgba(255,255,255,.85)}
+.s-card.v2.ph .c-dur.soon{color:#fff;background:#D9252D;padding:3px 8px;border-radius:999px}
 </style>
 
 <script>
@@ -728,40 +785,56 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
    '웰니스 커뮤니티, 비즈니스가 되다':'웰니스 커뮤니티를 만드는 리더들과 함께, 건강한 경험이 연결되고 문화와 비즈니스로 확장되는 과정을 나눕니다.',
    '틈새운동 (Exercise Snacking)':'따로 시간을 내지 않아도 괜찮습니다. 일상의 틈에 짧게 더하는 움직임으로 근력과 체력을 지키는 법을 알아봅니다.',
    '에블바레와 함께하는 SMCC 바레':'에블바레와 함께 발레 동작을 응용한 바레 클래스로 몸을 깨우며 토요일 아침을 엽니다.',
-   '롱제비티의 역사':'인류는 언제부터 오래 사는 법을 고민해 왔을까요. 롱제비티를 향한 오랜 여정을 이낙준 작가와 함께 따라가 봅니다.'};
+   '인간은 오래 살기 위해 무엇을 먹어왔을까?':'인류는 언제부터 오래 사는 법을 고민해 왔을까요. 롱제비티를 향한 오랜 여정을 이낙준 작가와 함께 따라가 봅니다.'};
   const D=[
    {d:'11.20',en:'FRIDAY',ko:'금요일',s:[
-    {t:'09:30–11:00',ti:'SMCC Book Dive ‘이로운 식사법’',tc:1,sep:1,c:'90분',sp:[['SMCC'],['고경하']],nm:'SMCC · 고경하',sa:'SMCC · 슈리베다 원장'},
-    {t:'11:30–12:20',ph:1},
-    {t:'13:30–14:20',ph:1},
-    {t:'14:40–15:30',ti:'웰니스 커뮤니티, 비즈니스가 되다',tc:1,c:'CEO 세션',sp:[['김록'],['찰리'],['박재현']],nm:'김록 · 찰리 · 박재현',sa:'1,000 CAL CLUB · 롱진 · SMCC'},
-    {t:'16:00–16:50',ti:'틈새운동 (Exercise Snacking)',tc:1,c:'50분',sp:[['홍정기']],nm:'홍정기',sa:'교수 · 데이스쿼트'}]},
+    {id:1,t:'09:30–11:00',ti:'SMCC Book Dive ‘이로운 식사법’',tc:1,sep:1,sp:[['SMCC'],['고경하']],nm:'SMCC · 고경하',sa:'SMCC · 슈리베다 원장'},
+    {id:2,t:'11:30–12:20',ph:1},
+    {id:3,t:'13:30–14:20',ph:1},
+    {id:4,t:'14:40–15:30',ti:'웰니스 커뮤니티, 비즈니스가 되다',tc:1,tag:'CEO 세션',sp:[['김록'],['찰리'],['박재현']],nm:'김록 · 찰리 · 박재현',sa:'1,000 CAL CLUB · 롱진 · SMCC'},
+    {id:5,t:'16:00–16:50',ti:'틈새운동 (Exercise Snacking)',tc:1,sp:[['홍정기']],nm:'홍정기',sa:'교수 · 데이스쿼트'}]},
    {d:'11.21',en:'SATURDAY',ko:'토요일',s:[
-    {t:'09:30–11:00',ti:'에블바레와 함께하는 SMCC 바레',tc:1,sep:1,c:'90분',sp:[['SMCC']],nm:'SMCC',sa:'함께 움직이는 액티비티'},
-    {t:'12:20–13:20',ph:1},
-    {t:'13:40–14:40',ph:1},
-    {t:'15:00–16:00',ph:1},
-    {t:'16:20–17:40',ph:1}]},
+    {id:6,t:'09:30–11:00',ti:'에블바레와 함께하는 SMCC 바레',tc:1,sep:1,sp:[['SMCC']],nm:'SMCC',sa:'함께 움직이는 액티비티'},
+    {id:7,t:'12:20–13:20',ph:1},
+    {id:8,t:'13:40–14:40',ph:1},
+    {id:9,t:'15:00–16:00',ph:1},
+    {id:10,t:'16:20–17:40',ph:1}]},
    {d:'11.22',en:'SUNDAY',ko:'일요일',s:[
-    {t:'09:30–10:30',tbd:1,sep:1,c:'60분',sp:[['SMCC']],nm:'SMCC',sa:'요가 세션'},
-    {t:'11:20–12:20',tbd:1,c:'60분',sp:[['노경한'],['스페셜 게스트']],nm:'노경한 · 스페셜 게스트',sa:'정형외과 전문의'},
-    {t:'12:40–13:40',ti:'롱제비티의 역사',tc:1,c:'60분',sp:[['이낙준']],nm:'이낙준',sa:'작가 · 이비인후과 전문의'},
-    {t:'14:00–15:20',tbd:1,c:'80분',sp:[['우창윤'],['스페셜 게스트']],nm:'우창윤 · 스페셜 게스트',sa:'내분비내과 전문의 · 게스트 추후 공개'},
-    {t:'15:40–17:00',tbd:1,c:'80분',sp:[['오진승'],['스페셜 게스트']],nm:'오진승 · 스페셜 게스트',sa:'정신건강의학과 전문의 · 게스트 추후 공개'}]}];
+    {id:15,t:'09:30–10:30',tbd:1,sep:1,sp:[['SMCC']],nm:'SMCC',sa:'요가 세션'},
+    {id:11,t:'11:10–12:10',tbd:1,sp:[['노경한'],['스페셜 게스트']],nm:'노경한 · 스페셜 게스트',sa:'정형외과 전문의'},
+    {id:12,t:'12:30–13:30',ti:'인간은 오래 살기 위해 무엇을 먹어왔을까?',tc:1,sp:[['이낙준']],nm:'이낙준',sa:'작가 · 이비인후과 전문의'},
+    {id:13,t:'13:50–14:50',tbd:1,sp:[['우창윤'],['스페셜 게스트']],nm:'우창윤 · 스페셜 게스트',sa:'내분비내과 전문의 · 게스트 추후 공개'},
+    {id:14,t:'15:30–16:50',tbd:1,sp:[['오진승'],['스페셜 게스트']],nm:'오진승 · 스페셜 게스트',sa:'정신건강의학과 전문의 · 게스트 추후 공개'}]}];
   const esc=s=>s.replace(/&/g,'&amp;');
   const PHOTO={'찰리':'av_charlie','박재현':'av_park','홍정기':'av_hong','노경한':'av_noh','이낙준':'av_leenj','우창윤':'av_woo','오진승':'av_oh'};
   const av=n=>{ if(n==='SMCC') return `<span class="av logo"><img src="img/smcc.png" alt="SMCC"></span>`;
     if(n==='스페셜 게스트') return `<span class="av guest" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 1.5C12.7 7.4 16.6 11.3 22.5 12C16.6 12.7 12.7 16.6 12 22.5C11.3 16.6 7.4 12.7 1.5 12C7.4 11.3 11.3 7.4 12 1.5Z" fill="#7A5450"/></svg></span>`;
     const f=PHOTO[n]; if(!f) return `<span class="av" aria-hidden="true">${n.slice(0,1)}</span>`;
     return `<span class="av photo"><img src="img/${f}.png" alt="" loading="lazy"></span>`; };
+  const dur=t=>{const m=t.match(/(\d+):(\d+)\D+(\d+):(\d+)/); if(!m) return ''; const d=(+m[3]*60+ +m[4])-(+m[1]*60+ +m[2]); return d>0?d+'분':'';};
+  const ACT={open:()=>`<a class="s-book" href="${BOOK}" target="_blank" rel="noopener">예약하기 ↗</a>`,
+    soon:()=>`<span class="c-state soon">오픈 예정</span>`,
+    soldout:()=>`<span class="c-state sold">SOLD OUT</span>`,
+    sep:()=>`<span class="c-state sep">SMCC 별도 모집</span>`};
+  const defState=s=>s.sep?'sep':(s.tbd?'soon':'open');
+  window.__TT_STATE=window.__TT_STATE||{};
   document.getElementById('days').innerHTML=D.map(day=>`<div class="day"><div class="day-head"><div class="day-top"><h3><span class="num">${day.d}</span><span class="dw">${day.ko}</span></h3><span class="cnt">${day.s.length} SESSIONS</span></div></div>${day.s.map(s=>{
-    if(s.ph) return `<article class="s-card ph"><div class="s-row"><span class="s-time">${s.t}</span><span class="s-chip soon">COMING SOON</span></div><div class="s-head"><h4 class="s-title">세션 추후 공개</h4></div></article>`;
+    if(s.ph) return `<article class="s-card v2 ph" data-slot="${s.id}"><div class="c-top"><h4 class="s-title">세션 추후 공개</h4><span class="c-dur soon">COMING SOON</span></div><div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b></div></div></article>`;
     let sp='';
     if(s.sp){ const names=s.sp.map(p=>p[0]);
-      sp=`<div class="s-sp${names.length>1?' multi':''}"><span class="avs">${names.slice(0,3).map(av).join('')}</span><span class="sp-t"><span class="sp-n">${esc(s.nm)}</span>${s.sa?`<span class="sp-a">${esc(s.sa)}</span>`:''}</span></div>`; }
+      sp=`<div class="s-sp"><span class="avs">${names.slice(0,3).map(av).join('')}</span><span class="sp-t"><span class="sp-n">${esc(s.nm)}</span>${s.sa?`<span class="sp-a">${esc(s.sa)}</span>`:''}</span></div>`; }
     const title=s.tbd?'주제 추후 공개':s.ti;
     const desc=s.tc&&DESC[s.ti]?`<p class="s-desc">${DESC[s.ti]}</p>`:'';
-    return `<article class="s-card"><div class="s-row"><span class="s-time">${s.t}</span>${s.c?`<span class="s-chip">${s.c}</span>`:''}</div><div class="s-head"><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4></div>${sp}<div class="s-foot">${desc}${s.sep?`<span class="s-sep">SMCC 별도 모집 세션입니다</span>`:`<a class="s-book" href="${BOOK}" target="_blank" rel="noopener">이 세션 예약하기 ↗</a>`}</div></article>`;}).join('')}</div>`).join('');
+    const st=defState(s);
+    return `<article class="s-card v2" data-slot="${s.id}" data-state="${st}"><div class="c-top">${sp}<span class="c-dur">${dur(s.t)}</span></div><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4>${s.tag?`<div class="c-tags"><span>${s.tag}</span></div>`:''}${desc}<div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b>${s.sep?'':'<span class="c-sub">세션마다 80석</span>'}</div><div class="c-act">${ACT[st]()}</div></div></article>`;}).join('')}</div>`).join('');
+  // live ticket status (status.json is refreshed every 30 min from the ticket page)
+  function applyTT(ST){ if(!ST||!ST.slots) return;
+    document.querySelectorAll('#days .s-card[data-slot]').forEach(c=>{ const x=ST.slots[c.dataset.slot]; if(!x) return;
+      if(x.time){ const tm=c.querySelector('.c-time'); if(tm) tm.textContent=x.time.replace('-', '–').replace('~','–'); const du=c.querySelector('.c-dur:not(.soon)'); if(du) du.textContent=dur(x.time); }
+      if(c.classList.contains('ph')) return;
+      let st=x.state; if(c.dataset.state==='sep') st='sep';
+      if(!ACT[st]) return; c.dataset.state=st; const a=c.querySelector('.c-act'); if(a) a.innerHTML=ACT[st](); }); }
+  fetch('status.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(applyTT).catch(()=>{});
 
   // day filter
   const daysEl=document.getElementById('days');
