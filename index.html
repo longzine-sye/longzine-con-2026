@@ -627,6 +627,39 @@ a.l-card{display:block;color:#fff;text-decoration:none}
 /* readability: Korean text tracking -1% (11.03) */
 body{letter-spacing:-0.01em}
 .cd7{letter-spacing:0}
+
+/* JOIN US: card under timer (11.03) */
+.visit .two .r.join{align-items:start}
+.join-r{display:flex;flex-direction:column;gap:32px;min-width:0}
+.join-r .join-cards{grid-column:auto;grid-template-columns:1fr;width:100%}
+
+/* JOIN US desktop: heading+timer left, 롱진콘 card right aligned to heading (11.03) */
+@media (min-width: 901px){
+  .visit .two .r.join{grid-template-columns:1fr 1fr;column-gap:64px;row-gap:40px;align-items:start}
+  .visit .two .r.join .join-r{display:contents}
+  .visit .two .r.join .join-l{grid-column:1;grid-row:1}
+  .visit .two .r.join .cd7-box{grid-column:1;grid-row:2}
+  .visit .two .r.join .join-cards{grid-column:2;grid-row:1 / span 2;align-self:start;margin-top:var(--jh-off,44px)}
+}
+
+/* JOIN US B: centered single column (11.03) */
+.visit .two .r.join.join-b{display:flex!important;flex-direction:column;align-items:center;text-align:center;padding:0;gap:0;grid-column:1 / -1}
+.join-b .eyebrow{justify-content:center}
+.join-b .join-h{margin-top:24px}
+.join-b .cd7-box{align-items:center!important;margin-top:48px}
+.join-b .cd7{justify-content:center}
+.join-b .join-desc{margin:48px 0 0;font-size:16px;line-height:26px;color:rgba(255,255,255,.85);word-break:keep-all}
+.join-b .join-desc b{color:#fff}
+.join-b .join-act{margin-top:20px;justify-content:center;padding-top:0}
+.join-b .join-act .jc-btn{margin-top:0}
+@media (max-width: 900px){ .join-b .cd7-box{margin-top:32px} .join-b .join-desc{margin-top:32px;font-size:15px} }
+.join-b .join-act{display:flex;align-items:center;flex-wrap:wrap;gap:12px 16px}
+.join-b .jc-note{font-size:14px;line-height:20px;color:rgba(255,255,255,.7)}
+.visit .join-b .cd-box.cd7-box{background:none;border:0;padding:0;align-self:center;gap:16px}
+.join-b .cd-l{color:#FF3D44;font-size:14px;line-height:20px}
+.join-b .cd-l em{color:rgba(255,255,255,.9)}
+.visit .r.join-b .join-desc{margin-top:40px}
+@media (max-width: 900px){ .visit .r.join-b .join-desc{margin-top:28px} }
 </style>
 
 <script>
@@ -705,10 +738,13 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 <div class="page">
 <section class="block visit" id="visit" aria-label="방문 안내" style="padding-block:96px">
   <div class="wrap two">
-    <div class="r join"><div class="join-l"><div class="eyebrow about-eb">JOIN US</div><h3 class="join-h">사전 신청 한 번으로<br>엑스포 입장과 롱진콘까지.</h3></div><div class="join-r"><div class="cd-box cd7-box"><span class="cd-l">무료 사전 신청 마감까지 <em>11.19(목) 18:00</em></span><div class="cd7" data-cd7 role="timer" aria-live="off"><div class="g dd"><span class="n" data-u="d">00</span><span class="lb">DAYS</span></div><span class="c">:</span><div class="g"><span class="n" data-u="h">00</span><span class="lb">HR</span></div><span class="c">:</span><div class="g"><span class="n" data-u="m">00</span><span class="lb">MIN</span></div><span class="c">:</span><div class="g"><span class="n" data-u="s">00</span><span class="lb">SEC</span></div></div></div></div>
-      <div class="join-cards">
-        <div class="jc jc-main"><h4>롱진콘 세션 예매</h4><span class="jc-en">LONGZINE TALK CONCERT</span><p>듣고 싶은 세션을 골라 예매하세요. <b>엑스포 관람</b>도 포함됩니다.</p><div class="jc-act"><a class="btn-primary jc-btn" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">롱진콘 예매하기 ↗</a><span class="jc-note">세션마다 80석</span></div></div>
-      </div></div>
+    <div class="r join join-b">
+      <div class="eyebrow about-eb">JOIN US</div>
+      <h3 class="join-h">사전 신청 한 번으로<br>엑스포 입장과 롱진콘까지.</h3>
+      <div class="cd-box cd7-box"><span class="cd-l">무료 사전 신청 마감까지 <em>11.19(목) 18:00</em></span><div class="cd7" data-cd7 role="timer" aria-live="off"><div class="g dd"><span class="n" data-u="d">00</span><span class="lb">DAYS</span></div><span class="c">:</span><div class="g"><span class="n" data-u="h">00</span><span class="lb">HR</span></div><span class="c">:</span><div class="g"><span class="n" data-u="m">00</span><span class="lb">MIN</span></div><span class="c">:</span><div class="g"><span class="n" data-u="s">00</span><span class="lb">SEC</span></div></div></div>
+      <p class="join-desc">듣고 싶은 세션을 골라 예매하세요. <b>엑스포 관람</b>도 포함됩니다.</p>
+      <div class="jc-act join-act"><a class="btn-primary jc-btn" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">롱진콘 예매하기 ↗</a><span class="jc-note">세션마다 80석</span></div>
+    </div>
   </div>
 </section>
 
@@ -988,28 +1024,4 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 
 
 
-<script>
-/* UTM 이어 붙이기: 이 페이지에 붙어 온 UTM을 엑스포 신청 링크로 넘겨줌.
-   UTM 없이 들어오면 기본값(롱진콘 사이트 경유)으로 표시 */
-(function(){
-  var KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-  var inParams=new URLSearchParams(location.search), utm={};
-  KEYS.forEach(function(k){ if(inParams.get(k)) utm[k]=inParams.get(k); });
-  if(!utm.utm_source){
-    utm={utm_source:'longzine_site',utm_medium:'landing',utm_campaign:'longzinecon_2026',utm_content:'longzine'};
-  }
-  function tag(a){
-    if(!a||!a.href||a.href.indexOf('mindwellexpo.com')<0) return;
-    try{
-      var u=new URL(a.href);
-      Object.keys(utm).forEach(function(k){ u.searchParams.set(k,utm[k]); });
-      a.href=u.toString();
-    }catch(e){}
-  }
-  function run(){ document.querySelectorAll('a[href*="mindwellexpo.com"]').forEach(tag); }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run); else run();
-  // 나중에 스크립트로 만들어지는 버튼도 클릭 순간에 처리
-  document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a'); if(a) tag(a); },true);
-})();
-</script>
 </body></html>
