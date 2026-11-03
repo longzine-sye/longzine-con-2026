@@ -126,9 +126,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   radial-gradient(ellipse 70% 14% at 100% 14%,rgba(201,99,106,.35),rgba(201,99,106,0) 100%),
   radial-gradient(ellipse 62% 14% at 0% 37%,rgba(154,42,52,.45),rgba(154,42,52,0) 100%),
   radial-gradient(ellipse 70% 14% at 85% 57%,rgba(154,42,52,.4),rgba(154,42,52,0) 100%),
-  radial-gradient(ellipse 70% 14% at 15% 88%,rgba(201,99,106,.35),rgba(201,99,106,0) 100%),
-  radial-gradient(ellipse 78% 11% at 90% 103%,rgba(203,101,102,.45),rgba(203,101,102,0) 100%),
-  linear-gradient(180deg,#9D393E 0%,#5A1420 9%,#14030A 20%,#3A0610 34%,#6E1622 47%,#24040A 64%,#4A0C16 82%,#8A2630 100%)}
+  radial-gradient(ellipse 70% 14% at 15% 88%,rgba(201,99,106,.14),rgba(201,99,106,0) 100%),
+  radial-gradient(ellipse 78% 11% at 90% 103%,rgba(203,101,102,.18),rgba(203,101,102,0) 100%),
+  linear-gradient(180deg,#9D393E 0%,#5A1420 9%,#14030A 20%,#3A0610 34%,#6E1622 47%,#24040A 64%,#2E0811 82%,#4A1018 100%)}
 section.block{padding-block:120px}
 .eyebrow{display:flex;align-items:center;gap:8px;font-size:12px;line-height:16px;color:rgba(255,255,255,.85)}
 .eyebrow::before{content:"";width:8px;height:8px;border-radius:1px;background:#E3262E;flex:none}
@@ -497,6 +497,10 @@ a.l-card{display:block;color:#fff;text-decoration:none}
   .ab-mark.mt img,.ab-mark.lzc svg{height:44px;width:auto}
   .ab-row p{font-size:15px;line-height:25px}
 }
+
+/* JOIN US step labels (11.03) */
+.jc-k{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-ko);font-size:13px;letter-spacing:0;color:rgba(255,255,255,.8)}
+.jc-k em{font-style:normal;font-family:var(--font-en);font-weight:600;font-size:11px;letter-spacing:.08em;padding:3px 8px;border-radius:999px;background:#E3262E;color:#fff}
 </style>
 
 <script>
@@ -511,7 +515,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     <nav class="nav" aria-label="주요 메뉴">
       <a href="#program">TIMETABLE</a><a href="#lineup">LINEUP</a><a href="#about">ABOUT</a><a href="#visit">VISIT</a>
     </nav>
-    <a class="btn-ghost btn-white" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">무료 사전 신청</a>
+    <a class="btn-ghost btn-white" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">사전 신청하기</a>
   </div></div>
 </header>
 
@@ -623,8 +627,8 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
   <div class="wrap two">
     <div class="r join"><div class="join-l"><div class="eyebrow about-eb">JOIN US</div><h3 class="join-h">사전 신청 한 번으로<br>엑스포 입장과 롱진콘까지.</h3></div><div class="join-r"><div class="cd-box"><span class="cd-l">무료 사전 신청 마감까지 <em>11.19(목) 18:00</em></span><div class="cd" data-cd aria-live="off">D-00 · 00:00:00</div></div></div>
       <div class="join-cards">
-        <div class="jc"><span class="jc-k">EXPO</span><h4>2026 웰니스&amp;마인드케어 엑스포</h4><p>온라인으로 사전 신청하면 엑스포에 <b>무료로 입장</b>할 수 있어요.</p><span class="jc-m">현장 등록 시 1인 10,000원</span><a class="btn-primary jc-btn" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">엑스포 무료 사전 신청 ↗</a></div>
-        <div class="jc"><span class="jc-k">LONGZINE CON</span><h4>롱진콘 세션 예매</h4><p><mark class="hl">엑스포 사전 신청을 통해 롱진콘 세션을 예매</mark>할 수 있어요.<br>듣고 싶은 세션을 골라 세션별로 개별 예매해 주세요.</p><span class="jc-m">세션마다 80석</span><a class="btn-primary jc-btn" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">롱진콘 예매하기 ↗</a></div>
+        <div class="jc"><span class="jc-k"><em>STEP 1</em>먼저 사전 신청</span><h4>2026 웰니스&amp;마인드케어 엑스포</h4><p>온라인으로 사전 신청하면 엑스포에 <b>무료로 입장</b>할 수 있어요.</p><span class="jc-m">현장 등록 시 1인 10,000원</span><a class="btn-primary jc-btn" href="https://mindwellexpo.com/guide/sub02#ticket" target="_blank" rel="noopener">엑스포 무료 사전 신청 ↗</a></div>
+        <div class="jc"><span class="jc-k"><em>STEP 2</em>듣고 싶은 세션 예매</span><h4>롱진콘 세션 예매</h4><p><mark class="hl">엑스포 사전 신청을 통해 롱진콘 세션을 예매</mark>할 수 있어요.<br>듣고 싶은 세션을 골라 세션별로 개별 예매해 주세요.</p><span class="jc-m">세션마다 80석</span><a class="btn-primary jc-btn" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">롱진콘 예매하기 ↗</a></div>
       </div></div>
   </div>
 </section>
