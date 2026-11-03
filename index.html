@@ -988,4 +988,28 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 
 
 
+<script>
+/* UTM 이어 붙이기: 이 페이지에 붙어 온 UTM을 엑스포 신청 링크로 넘겨줌.
+   UTM 없이 들어오면 기본값(롱진콘 사이트 경유)으로 표시 */
+(function(){
+  var KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var inParams=new URLSearchParams(location.search), utm={};
+  KEYS.forEach(function(k){ if(inParams.get(k)) utm[k]=inParams.get(k); });
+  if(!utm.utm_source){
+    utm={utm_source:'longzine_site',utm_medium:'landing',utm_campaign:'longzinecon_2026',utm_content:'longzine'};
+  }
+  function tag(a){
+    if(!a||!a.href||a.href.indexOf('mindwellexpo.com')<0) return;
+    try{
+      var u=new URL(a.href);
+      Object.keys(utm).forEach(function(k){ u.searchParams.set(k,utm[k]); });
+      a.href=u.toString();
+    }catch(e){}
+  }
+  function run(){ document.querySelectorAll('a[href*="mindwellexpo.com"]').forEach(tag); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run); else run();
+  // 나중에 스크립트로 만들어지는 버튼도 클릭 순간에 처리
+  document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a'); if(a) tag(a); },true);
+})();
+</script>
 </body></html>
