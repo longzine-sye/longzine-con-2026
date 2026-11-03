@@ -826,7 +826,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     const title=s.tbd?'주제 추후 공개':s.ti;
     const desc=s.tc&&DESC[s.ti]?`<p class="s-desc">${DESC[s.ti]}</p>`:'';
     const st=defState(s);
-    return `<article class="s-card v2" data-slot="${s.id}" data-state="${st}"><div class="c-top">${sp}<span class="c-dur">${dur(s.t)}</span></div><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4>${s.tag?`<div class="c-tags"><span>${s.tag}</span></div>`:''}${desc}<div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b><span class="c-sub">러닝타임 ${dur(s.t)}</span></div><div class="c-act">${ACT[st]()}</div></div></article>`;}).join('')}</div>`).join('');
+    return `<article class="s-card v2" data-slot="${s.id}" data-state="${st}"><div class="c-top">${sp}</div><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4>${s.tag?`<div class="c-tags"><span>${s.tag}</span></div>`:''}${desc}<div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b><span class="c-sub">러닝타임 ${dur(s.t)}</span></div><div class="c-act">${ACT[st]()}</div></div></article>`;}).join('')}</div>`).join('');
   // live ticket status (status.json is refreshed every 30 min from the ticket page)
   function applyTT(ST){ if(!ST||!ST.slots) return;
     document.querySelectorAll('#days .s-card[data-slot]').forEach(c=>{ const x=ST.slots[c.dataset.slot]; if(!x) return;
