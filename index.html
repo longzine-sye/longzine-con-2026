@@ -1045,4 +1045,20 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 
 
 
+<script>
+/* GA4: 예매·사전신청 버튼 클릭 이벤트 */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href*="mindwellexpo.com/ticket"]');
+  if(!a||typeof gtag!=='function') return;
+  var label=(a.querySelector('.l-book')||a).textContent.replace(/[↗\s]+/g,' ').trim();
+  var sec=a.closest('header,section');
+  var p={button_label:label.slice(0,100), button_location:sec?(sec.id||sec.className.split(' ')[0]):'page', link_url:a.href, transport_type:'beacon'};
+  var card=a.closest('.s-card');
+  if(card){ var t=card.querySelector('.s-title'), w=card.querySelector('.c-time');
+    p.session_title=t?t.textContent.trim().slice(0,100):''; p.session_time=w?w.textContent.trim():''; p.session_slot=card.dataset.slot||''; }
+  var lc=a.closest('.l-card');
+  if(lc){ var h=lc.querySelector('h3'); p.speaker=h?h.textContent.replace(/\s+/g,' ').trim().slice(0,100):''; }
+  gtag('event', /사전\s*신청/.test(label)?'pre_register_click':'ticket_click', p);
+},true);
+</script>
 </body></html>
