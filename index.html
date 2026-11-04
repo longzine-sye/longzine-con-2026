@@ -872,10 +872,10 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     {id:10,t:'16:20–17:40',ph:1}]},
    {d:'11.22',en:'SUNDAY',ko:'일요일',s:[
     {id:15,t:'09:30–10:30',tbd:1,sep:1,sp:[['SMCC']],nm:'SMCC',sa:'요가 세션'},
-    {id:11,t:'11:10–12:10',tbd:1,sp:[['노경한'],['유현주']],nm:'노경한 · 유현주',sa:'정형외과 전문의 · 프로 골퍼'},
+    {id:11,t:'11:10–12:10',ti:'오래, 건강하게 운동하는 법',tc:1,soon:1,sp:[['노경한'],['유현주']],nm:'노경한 · 유현주',sa:'정형외과 전문의 · 프로 골퍼'},
     {id:12,t:'12:30–13:30',ti:'인간은 오래 살기 위해 무엇을 먹어왔을까?',tc:1,sp:[['이낙준']],nm:'이낙준',sa:'작가 · 이비인후과 전문의'},
     {id:13,t:'13:50–14:50',tbd:1,sp:[['우창윤'],['스페셜 게스트']],nm:'우창윤 · 스페셜 게스트',sa:'내분비내과 전문의 · 게스트 추후 공개'},
-    {id:14,t:'15:30–16:50',tbd:1,sp:[['오진승'],['스페셜 게스트']],nm:'오진승 · 스페셜 게스트',sa:'정신건강의학과 전문의 · 게스트 추후 공개'}]}];
+    {id:14,t:'15:30–16:50',ti:'롱제비티의 마지막 퍼즐, 삶의 의미',tc:1,soon:1,sp:[['오진승'],['스페셜 게스트']],nm:'오진승 · 스페셜 게스트',sa:'정신건강의학과 전문의 · 게스트 추후 공개'}]}];
   const esc=s=>s.replace(/&/g,'&amp;');
   const PHOTO={'김록':'av_kimrok','찰리':'av_charlie','박재현':'av_park','홍정기':'av_hong','노경한':'av_noh','유현주':'av_yoohj','이낙준':'av_leenj','우창윤':'av_woo','오진승':'av_oh'};
   const av=n=>{ if(n==='SMCC') return `<span class="av logo"><img src="img/smcc.png" alt="SMCC"></span>`;
@@ -887,7 +887,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     soon:()=>`<span class="c-state soon">오픈 예정</span>`,
     soldout:()=>`<span class="c-state sold">SOLD OUT</span>`,
     sep:()=>`<span class="c-state sep">SMCC 별도 모집</span>`};
-  const defState=s=>s.sep?'sep':(s.tbd?'soon':'open');
+  const defState=s=>s.sep?'sep':((s.tbd||s.soon)?'soon':'open');
   window.__TT_STATE=window.__TT_STATE||{};
   document.getElementById('days').innerHTML=D.map(day=>`<div class="day"><div class="day-head"><div class="day-top"><h3><span class="num">${day.d}</span><span class="dw">${day.ko}</span></h3><span class="cnt">${day.s.length} SESSIONS</span></div></div>${day.s.map(s=>{
     if(s.ph) return `<article class="s-card v2 ph" data-slot="${s.id}"><div class="c-top"><h4 class="s-title">세션 추후 공개</h4><span class="c-dur soon">COMING SOON</span></div><div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b></div></div></article>`;
