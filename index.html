@@ -856,6 +856,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
    '웰니스 커뮤니티, 비즈니스가 되다':'웰니스 커뮤니티를 만드는 리더들과 함께, 건강한 경험이 연결되고 문화와 비즈니스로 확장되는 과정을 나눕니다.',
    '틈새운동 (Exercise Snacking)':'따로 시간을 내지 않아도 괜찮습니다. 일상의 틈에 짧게 더하는 움직임으로 근력과 체력을 지키는 법을 알아봅니다.',
    '에블바레와 함께하는 SMCC 바레':'에블바레와 함께 발레 동작을 응용한 바레 클래스로 몸을 깨우며 토요일 아침을 엽니다.',
+   '오래, 건강하게 운동하는 법':'부상 없이, 나이 들어서도 즐겁게 움직이려면 무엇이 필요할까요. 정형외과 전문의 노경한 원장과 프로골프선수 유현주가 평생 운동할 수 있는 몸을 만드는 법을 이야기합니다.',
    '인간은 오래 살기 위해 무엇을 먹어왔을까?':'인류는 언제부터 오래 사는 법을 고민해 왔을까요. 롱제비티를 향한 오랜 여정을 이낙준 작가와 함께 따라가 봅니다.'};
   const D=[
    {d:'11.20',en:'FRIDAY',ko:'금요일',s:[
@@ -872,10 +873,10 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     {id:10,t:'16:20–17:40',ph:1}]},
    {d:'11.22',en:'SUNDAY',ko:'일요일',s:[
     {id:15,t:'09:30–10:30',tbd:1,sep:1,sp:[['SMCC']],nm:'SMCC',sa:'요가 세션'},
-    {id:11,t:'11:10–12:10',ti:'오래, 건강하게 운동하는 법',tc:1,soon:1,sp:[['노경한'],['유현주']],nm:'노경한 · 유현주',sa:'정형외과 전문의 · 프로골프선수'},
+    {id:11,t:'11:10–12:10',ti:'오래, 건강하게 운동하는 법',tc:1,open:1,sp:[['노경한'],['유현주']],nm:'노경한 · 유현주',sa:'정형외과 전문의 · 프로골프선수'},
     {id:12,t:'12:30–13:30',ti:'인간은 오래 살기 위해 무엇을 먹어왔을까?',tc:1,sp:[['이낙준']],nm:'이낙준',sa:'작가 · 이비인후과 전문의'},
     {id:13,t:'13:50–14:50',tbd:1,sp:[['우창윤'],['스페셜 게스트']],nm:'우창윤 · 스페셜 게스트',sa:'내분비내과 전문의 · 게스트 추후 공개'},
-    {id:14,t:'15:30–16:50',ti:'롱제비티의 마지막 퍼즐, 삶의 의미',tc:1,soon:1,sp:[['오진승'],['스페셜 게스트']],nm:'오진승 · 스페셜 게스트',sa:'정신건강의학과 전문의 · 게스트 추후 공개'}]}];
+    {id:14,t:'15:30–16:50',ti:'롱제비티의 마지막 퍼즐, 삶의 의미',tc:1,open:1,sp:[['오진승'],['스페셜 게스트']],nm:'오진승 · 스페셜 게스트',sa:'정신건강의학과 전문의 · 게스트 추후 공개'}]}];
   const esc=s=>s.replace(/&/g,'&amp;');
   const PHOTO={'김록':'av_kimrok','찰리':'av_charlie','박재현':'av_park','홍정기':'av_hong','노경한':'av_noh','유현주':'av_yoohj','이낙준':'av_leenj','우창윤':'av_woo','오진승':'av_oh'};
   const av=n=>{ if(n==='SMCC') return `<span class="av logo"><img src="img/smcc.png" alt="SMCC"></span>`;
@@ -887,7 +888,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     soon:()=>`<span class="c-state soon">오픈 예정</span>`,
     soldout:()=>`<span class="c-state sold">SOLD OUT</span>`,
     sep:()=>`<span class="c-state sep">SMCC 별도 모집</span>`};
-  const defState=s=>s.sep?'sep':((s.tbd||s.soon)?'soon':'open');
+  const defState=s=>s.sep?'sep':(s.open?'open':((s.tbd||s.soon)?'soon':'open'));
   window.__TT_STATE=window.__TT_STATE||{};
   document.getElementById('days').innerHTML=D.map(day=>`<div class="day"><div class="day-head"><div class="day-top"><h3><span class="num">${day.d}</span><span class="dw">${day.ko}</span></h3><span class="cnt">${day.s.length} SESSIONS</span></div></div>${day.s.map(s=>{
     if(s.ph) return `<article class="s-card v2 ph" data-slot="${s.id}"><div class="c-top"><h4 class="s-title">세션 추후 공개</h4><span class="c-dur soon">COMING SOON</span></div><div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b></div></div></article>`;
@@ -897,13 +898,13 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     const title=s.tbd?'주제 추후 공개':s.ti;
     const desc=s.tc&&DESC[s.ti]?`<p class="s-desc">${DESC[s.ti]}</p>`:'';
     const st=defState(s);
-    return `<article class="s-card v2" data-slot="${s.id}" data-state="${st}"><div class="c-top">${sp}</div><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4>${s.tag?`<div class="c-tags"><span>${s.tag}</span></div>`:''}${desc}<div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b><span class="c-sub">러닝타임 ${dur(s.t)}</span></div><div class="c-act">${ACT[st]()}</div></div></article>`;}).join('')}</div>`).join('');
+    return `<article class="s-card v2" data-slot="${s.id}" data-state="${st}"${s.open?' data-force="open"':''}><div class="c-top">${sp}</div><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4>${s.tag?`<div class="c-tags"><span>${s.tag}</span></div>`:''}${desc}<div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b><span class="c-sub">러닝타임 ${dur(s.t)}</span></div><div class="c-act">${ACT[st]()}</div></div></article>`;}).join('')}</div>`).join('');
   // live ticket status (status.json is refreshed every 30 min from the ticket page)
   function applyTT(ST){ if(!ST||!ST.slots) return;
     document.querySelectorAll('#days .s-card[data-slot]').forEach(c=>{ const x=ST.slots[c.dataset.slot]; if(!x) return;
       if(x.time){ const tm=c.querySelector('.c-time'); if(tm) tm.textContent=x.time.replace('-', '–').replace('~','–'); const du=c.querySelector('.c-dur:not(.soon)'); if(du) du.textContent=dur(x.time); const sb=c.querySelector('.c-sub'); if(sb) sb.textContent='러닝타임 '+dur(x.time); }
       if(c.classList.contains('ph')) return;
-      let st=x.state; if(c.dataset.state==='sep') st='sep';
+      let st=x.state; if(c.dataset.state==='sep') st='sep'; if(c.dataset.force==='open'&&st==='soon') st='open';
       if(!ACT[st]) return; c.dataset.state=st; const a=c.querySelector('.c-act'); if(a) a.innerHTML=ACT[st](); }); }
   fetch('status.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(applyTT).catch(()=>{});
 
