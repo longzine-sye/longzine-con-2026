@@ -687,6 +687,11 @@ body{letter-spacing:-0.01em}
 @media (max-width: 900px){ .site-foot.foot-lockup{padding:48px 0 64px} .site-foot.foot-lockup .lockup{gap:12px} .site-foot.foot-lockup .lk-expo{height:32px} .site-foot.foot-lockup .lk-lz{height:20px} .site-foot.foot-lockup .x{font-size:16px} }
 .about{padding-bottom:120px}
 @media (max-width: 900px){ .about{padding-bottom:72px} }
+
+/* JOIN US: seat note under description (11.04) */
+.visit .r.join-b .join-seat{margin:6px 0 0;font-size:14px;line-height:20px;color:rgba(255,255,255,.6)}
+.join-b .join-h{margin-top:0}
+.visit .r.join-b .join-act{margin-top:24px}
 </style>
 
 <script>
@@ -766,11 +771,11 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 <section class="block visit" id="visit" aria-label="방문 안내" style="padding-block:96px">
   <div class="wrap two">
     <div class="r join join-b">
-      <div class="eyebrow about-eb">JOIN US</div>
-      <h3 class="join-h">사전 신청 한 번으로<br>엑스포 입장과 롱진콘까지.</h3>
+            <h3 class="join-h">사전 신청 한 번으로<br>엑스포 입장과 롱진콘까지.</h3>
       <div class="cd-box cd7-box"><span class="cd-l">사전 신청 마감까지 <em>11.19(목) 18:00</em></span><div class="cd7" data-cd7 role="timer" aria-live="off"><div class="g dd"><span class="n" data-u="d">00</span><span class="lb">DAYS</span></div><span class="c">:</span><div class="g"><span class="n" data-u="h">00</span><span class="lb">HR</span></div><span class="c">:</span><div class="g"><span class="n" data-u="m">00</span><span class="lb">MIN</span></div><span class="c">:</span><div class="g"><span class="n" data-u="s">00</span><span class="lb">SEC</span></div></div></div>
       <p class="join-desc">듣고 싶은 세션을 골라 예매하세요. <b>엑스포 관람</b>도 포함됩니다.</p>
-      <div class="jc-act join-act"><a class="btn-primary jc-btn" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">롱진콘 예매하기 ↗</a><span class="jc-note">세션마다 80석 제한</span></div>
+      <p class="join-seat">세션마다 80석 제한</p>
+      <div class="jc-act join-act"><a class="btn-primary jc-btn" href="https://mindwellexpo.com/ticket/longzine" target="_blank" rel="noopener">롱진콘 예매하기 ↗</a></div>
     </div>
   </div>
 </section>
@@ -790,7 +795,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
 <section class="block" id="lineup" aria-labelledby="lu-h">
   <div class="wrap">
     <div class="sec-head">
-      <div><div class="eyebrow">삶을 바꾸는 관점들</div><h2 class="h-display" id="lu-h">LINEUP</h2></div>
+      <div><h2 class="h-display" id="lu-h">LINEUP</h2></div>
       <div class="lu-head-r">
         <button class="arrow" id="prev" aria-label="이전 연사"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
         <button class="arrow" id="next" aria-label="다음 연사"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
