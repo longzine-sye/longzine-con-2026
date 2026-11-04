@@ -881,7 +881,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
   const av=n=>{ if(n==='SMCC') return `<span class="av logo"><img src="img/smcc.png" alt="SMCC"></span>`;
     if(n==='스페셜 게스트') return `<span class="av guest" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 1.5C12.7 7.4 16.6 11.3 22.5 12C16.6 12.7 12.7 16.6 12 22.5C11.3 16.6 7.4 12.7 1.5 12C7.4 11.3 11.3 7.4 12 1.5Z" fill="#7A5450"/></svg></span>`;
     const f=PHOTO[n]; if(!f) return `<span class="av" aria-hidden="true">${n.slice(0,1)}</span>`;
-    return `<span class="av photo"><img src="img/${f}.png" alt="" loading="lazy"></span>`; };
+    return `<span class="av photo"><img src="img/${f}.png?v=2" alt="" loading="lazy"></span>`; };
   const dur=t=>{const m=t.match(/(\d+):(\d+)\D+(\d+):(\d+)/); if(!m) return ''; const d=(+m[3]*60+ +m[4])-(+m[1]*60+ +m[2]); return d>0?d+'분':'';};
   const ACT={open:()=>`<a class="s-book" href="${BOOK}" target="_blank" rel="noopener">예매하기 ↗</a>`,
     soon:()=>`<span class="c-state soon">오픈 예정</span>`,
