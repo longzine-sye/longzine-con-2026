@@ -692,10 +692,10 @@ body{letter-spacing:-0.01em}
 .visit .r.join-b .join-seat{margin:6px 0 0;font-size:14px;line-height:20px;color:rgba(255,255,255,.6)}
 .join-b .join-h{margin-top:0}
 .visit .r.join-b .join-act{margin-top:24px}
-.l-card.duo .l-bottom{bottom:23px}
-.l-card.duo .l-bottom h3{font-size:24px;line-height:40px}
-.l-card.duo .l-bottom p{margin-top:-5px;font-size:14px;line-height:24px}
-.l-card.duo .l-book{margin-top:10px}
+.l-card .l-bottom{bottom:23px}
+.l-card .l-bottom h3{font-size:24px;line-height:40px}
+.l-card .l-bottom p{margin-top:-5px;font-size:14px;line-height:24px}
+.l-card .l-book{margin-top:10px}
 </style>
 
 <script>
@@ -938,12 +938,13 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     ['oh','오진승','정신건강의학과 전문의','MENTAL WELLNESS','11.22 SUN','W',[2.06,16.90,98.81]],
     ['nakjun_lu','이낙준','작가 · 이비인후과 전문의','LONGEVITY HISTORY','11.22 SUN','O',[-18.75,2.93,139.88]],
     ['hong_lu','홍정기','교수 · 데이스쿼트','EXERCISE SNACKING','11.20 FRI','B',[-4.17,14.86,117.86]],
+    ['ceo_lu','김록 · 찰리 · 박재현','1,000 CAL CLUB · 롱진 · SMCC','CEO SESSION','11.20 FRI','O',[0,0,100]],
     ['noh','노경한 · 유현주','정형외과 전문의 · 프로골프선수','MOVEMENT','11.22 SUN','B',[-12.2,25.9,82.14],0,['yoohj_lu',23.81,20.95,89.88]],
     ['byun','변상균','연세대 생명공학과 교수','LONGEVITY SCIENCE','11.20 FRI','O',[-10.36,17.61,108.93],1],
     ['lee','이주희','피부과 전문의','SKIN LONGEVITY','11.21 SAT','W',[-5.65,18.92,96.43],1],
     ['choi','최예진','산부인과 전문의',"WOMEN'S HEALTH",'11.21 SAT','O',[-7.53,9.50,113.10],1]];
   const LV=[['soon'],...L.filter(r=>!r[7])];
-  const WORD={"byun": ["LONGEVITY", "SCIENCE"], "noh": ["MOVE", "MENT"], "lee": ["SKIN", "LONGEVITY"], "choi": ["WOMEN'S", "HEALTH"], "woo": ["META", "BOLIC"], "oh": ["MENTAL", "WELLNESS"], "nakjun_lu": ["LONGEVITY", "HISTORY"], "hong_lu": ["EXERCISE", "SNACKING"]};
+  const WORD={"byun": ["LONGEVITY", "SCIENCE"], "noh": ["MOVE", "MENT"], "lee": ["SKIN", "LONGEVITY"], "choi": ["WOMEN'S", "HEALTH"], "woo": ["META", "BOLIC"], "oh": ["MENTAL", "WELLNESS"], "nakjun_lu": ["LONGEVITY", "HISTORY"], "hong_lu": ["EXERCISE", "SNACKING"], "ceo_lu": ["CEO", "TALK"]};
   const rail=document.getElementById('rail');
   const BOOKL='https://mindwellexpo.com/ticket/longzine';
   const cardHTML=(r,clone)=>{ const ti=clone?' tabindex="-1" aria-hidden="true"':'';
