@@ -1,6 +1,6 @@
 {
  "source": "https://mindwellexpo.com/ticket/longzine",
- "updated": "2026-11-04T19:28+09:00",
+ "updated": "2026-11-08T20:58+09:00",
  "slots": {
   "1": {
    "state": "sep",
@@ -15,7 +15,7 @@
    "time": "13:30-14:20"
   },
   "4": {
-   "state": "open",
+   "state": "soldout",
    "time": "14:40-15:30"
   },
   "5": {
