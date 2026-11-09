@@ -885,7 +885,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     {id:5,t:'16:00–16:50',ti:'틈새운동 (Exercise Snacking)',tc:1,sp:[['홍정기']],nm:'홍정기',sa:'교수 · 데이스쿼트'}]},
    {d:'11.21',en:'SATURDAY',ko:'토요일',s:[
     {id:6,t:'09:30–11:00',ti:'에블바레와 함께하는 SMCC 바레',tc:1,sep:1,sp:[['SMCC']],nm:'SMCC',sa:'함께 움직이는 액티비티'},
-    {id:7,t:'11:30–12:20',ti:'노화를 늦추는 과학: 생명공학이 본 롱제비티',tc:1,sp:[['변상균']],nm:'변상균',sa:'연세대학교 생명공학과 교수'},
+    {id:7,t:'11:30–12:10',tlock:1,ti:'노화를 늦추는 과학: 생명공학이 본 롱제비티',tc:1,sp:[['변상균']],nm:'변상균',sa:'연세대학교 생명공학과 교수'},
     {id:8,t:'13:40–14:40',ti:'스킨 롱제비티: 피부도 노화를 늦출 수 있을까',tc:1,sp:[['이주희']],nm:'이주희',sa:'피부과 전문의 · 주닥'},
     {id:9,t:'15:30–16:30',ti:'달라지는 몸, 달라져야 할 관리',tc:1,sp:[['최예진'],['김세한']],nm:'최예진 · 김세한',sa:'산부인과 전문의 · 정신건강의학과 전문의'},
     {id:10,t:'16:50–18:10',ph:1}]},
@@ -916,11 +916,11 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     const title=s.tbd?'주제 추후 공개':s.ti;
     const desc=s.tc&&DESC[s.ti]?`<p class="s-desc">${DESC[s.ti]}</p>`:'';
     const st=defState(s);
-    return `<article class="s-card v2" data-slot="${s.id}" data-state="${st}"${s.open?' data-force="open"':''}><div class="c-top">${sp}</div><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4>${s.tag?`<div class="c-tags"><span>${s.tag}</span></div>`:''}${desc}<div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b><span class="c-sub">러닝타임 ${dur(s.t)}</span></div><div class="c-act">${ACT[st]()}</div></div></article>`;}).join('')}</div>`).join('');
+    return `<article class="s-card v2" data-slot="${s.id}" data-state="${st}"${s.tlock?' data-tlock="1"':''}${s.open?' data-force="open"':''}><div class="c-top">${sp}</div><h4 class="s-title${s.tbd?' tbd':''}">${esc(title)}</h4>${s.tag?`<div class="c-tags"><span>${s.tag}</span></div>`:''}${desc}<div class="c-bot"><div class="c-when"><b class="c-time">${s.t}</b><span class="c-sub">러닝타임 ${dur(s.t)}</span></div><div class="c-act">${ACT[st]()}</div></div></article>`;}).join('')}</div>`).join('');
   // live ticket status (status.json is refreshed every 30 min from the ticket page)
   function applyTT(ST){ if(!ST||!ST.slots) return;
     document.querySelectorAll('#days .s-card[data-slot]').forEach(c=>{ const x=ST.slots[c.dataset.slot]; if(!x) return;
-      if(x.time){ const tm=c.querySelector('.c-time'); if(tm) tm.textContent=x.time.replace('-', '–').replace('~','–'); const du=c.querySelector('.c-dur:not(.soon)'); if(du) du.textContent=dur(x.time); const sb=c.querySelector('.c-sub'); if(sb) sb.textContent='러닝타임 '+dur(x.time); }
+      if(x.time&&!c.dataset.tlock){ const tm=c.querySelector('.c-time'); if(tm) tm.textContent=x.time.replace('-', '–').replace('~','–'); const du=c.querySelector('.c-dur:not(.soon)'); if(du) du.textContent=dur(x.time); const sb=c.querySelector('.c-sub'); if(sb) sb.textContent='러닝타임 '+dur(x.time); }
       if(c.classList.contains('ph')) return;
       let st=x.state; if(c.dataset.state==='sep') st='sep'; if(c.dataset.force==='open'&&st==='soon') st='open';
       if(!ACT[st]) return; c.dataset.state=st; const a=c.querySelector('.c-act'); if(a) a.innerHTML=ACT[st](); }); }
