@@ -880,16 +880,15 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
   const D=[
    {d:'11.20',en:'FRIDAY',ko:'금요일',s:[
     {id:1,t:'09:30–11:00',ti:'SMCC Book Dive ‘이로운 식사법’',tc:1,sep:1,sp:[['SMCC'],['고경하']],nm:'SMCC · 고경하',sa:'SMCC · 슈리베다 원장'},
-    {id:2,t:'11:30–12:20',ti:'웰니스 키 플레이어 토크: 나를 돌보는 기준, 여성의 웰니스 루틴',tc:1,soon:1,sp:[['김태희'],['정희진'],['박세인']],nm:'김태희 · 정희진 · 박세인'},
-    {id:3,t:'13:30–14:20',ph:1},
+    {id:2,t:'11:30–12:20',ti:'웰니스 키 플레이어 토크: 나를 돌보는 기준, 여성의 웰니스 루틴',tc:1,sp:[['김태희'],['정희진'],['박세인']],nm:'김태희 · 정희진 · 박세인'},
     {id:4,t:'14:40–15:30',ti:'웰니스 커뮤니티, 비즈니스가 되다',tc:1,tag:'CEO 세션',sp:[['김록'],['찰리'],['박재현']],nm:'김록 · 찰리 · 박재현',sa:'1,000 CAL CLUB · 롱진 · SMCC'},
     {id:5,t:'16:00–16:50',ti:'틈새운동 (Exercise Snacking)',tc:1,sp:[['홍정기']],nm:'홍정기',sa:'교수 · 데이스쿼트'}]},
    {d:'11.21',en:'SATURDAY',ko:'토요일',s:[
     {id:6,t:'09:30–11:00',ti:'에블바레와 함께하는 SMCC 바레',tc:1,sep:1,sp:[['SMCC']],nm:'SMCC',sa:'함께 움직이는 액티비티'},
-    {id:7,t:'12:20–13:20',ti:'노화를 늦추는 과학: 생명공학이 본 롱제비티',tc:1,soon:1,sp:[['변상균']],nm:'변상균',sa:'연세대학교 생명공학과 교수'},
-    {id:8,t:'13:40–14:40',ti:'스킨 롱제비티: 피부도 노화를 늦출 수 있을까',tc:1,soon:1,sp:[['이주희']],nm:'이주희',sa:'피부과 전문의 · 주닥'},
-    {id:9,t:'15:00–16:00',ti:'달라지는 몸, 달라져야 할 관리',tc:1,soon:1,sp:[['최예진'],['김세한']],nm:'최예진 · 김세한',sa:'산부인과 전문의 · 정신건강의학과 전문의'},
-    {id:10,t:'16:20–17:40',ph:1}]},
+    {id:7,t:'11:30–12:20',ti:'노화를 늦추는 과학: 생명공학이 본 롱제비티',tc:1,sp:[['변상균']],nm:'변상균',sa:'연세대학교 생명공학과 교수'},
+    {id:8,t:'13:40–14:40',ti:'스킨 롱제비티: 피부도 노화를 늦출 수 있을까',tc:1,sp:[['이주희']],nm:'이주희',sa:'피부과 전문의 · 주닥'},
+    {id:9,t:'15:30–16:30',ti:'달라지는 몸, 달라져야 할 관리',tc:1,sp:[['최예진'],['김세한']],nm:'최예진 · 김세한',sa:'산부인과 전문의 · 정신건강의학과 전문의'},
+    {id:10,t:'16:50–18:10',ph:1}]},
    {d:'11.22',en:'SUNDAY',ko:'일요일',s:[
     {id:15,t:'09:30–10:30',ti:'연희 시이작과 함께하는 SMCC 요가',tc:1,sep:1,sp:[['SMCC'],['박준형']],nm:'SMCC · 박준형',sa:'지금요기 강사'},
     {id:11,t:'11:10–12:10',ti:'오래, 건강하게 운동하는 법',tc:1,open:1,sp:[['노경한'],['유현주']],nm:'노경한 · 유현주',sa:'정형외과 전문의 · 프로골프선수'},
@@ -901,7 +900,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
   const av=n=>{ if(n==='SMCC') return `<span class="av logo"><img src="img/smcc.png" alt="SMCC"></span>`;
     if(n==='스페셜 게스트') return `<span class="av guest" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 1.5C12.7 7.4 16.6 11.3 22.5 12C16.6 12.7 12.7 16.6 12 22.5C11.3 16.6 7.4 12.7 1.5 12C7.4 11.3 11.3 7.4 12 1.5Z" fill="#7A5450"/></svg></span>`;
     const f=PHOTO[n]; if(!f) return `<span class="av" aria-hidden="true">${n.slice(0,1)}</span>`;
-    return `<span class="av photo"><img src="img/${f}.png?v=4" alt="" loading="lazy"></span>`; };
+    return `<span class="av photo"><img src="img/${f}.png?v=5" alt="" loading="lazy"></span>`; };
   const dur=t=>{const m=t.match(/(\d+):(\d+)\D+(\d+):(\d+)/); if(!m) return ''; const d=(+m[3]*60+ +m[4])-(+m[1]*60+ +m[2]); return d>0?d+'분':'';};
   const ACT={open:()=>`<a class="s-book" href="${BOOK}" target="_blank" rel="noopener">예매하기 ↗</a>`,
     soon:()=>`<span class="c-state soon">오픈 예정</span>`,
@@ -953,18 +952,19 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     ['nakjun_lu','이낙준','작가 · 이비인후과 전문의','LONGEVITY HISTORY','11.22 SUN','O',[-18.75,2.93,139.88]],
     ['hong_lu','홍정기','교수 · 데이스쿼트','EXERCISE SNACKING','11.20 FRI','B',[-4.17,14.86,117.86]],
     ['ceo_lu','김록 · 찰리 · 박재현','1,000 CAL CLUB · 롱진 · SMCC','CEO SESSION','11.20 FRI','O',[0,0,100]],
+    ['trio_lu','박세인 · 김태희 · 정희진','웰니스 키 플레이어 토크','WELLNESS KEY PLAYER','11.20 FRI','W',[0,0,100]],
     ['noh','노경한 · 유현주','정형외과 전문의 · 프로골프선수','MOVEMENT','11.22 SUN','B',[-12.2,25.9,82.14],0,['yoohj_lu',23.81,20.95,89.88]],
     ['byun','변상균','연세대학교 생명공학과 교수','LONGEVITY SCIENCE','11.21 SAT','O',[-10.36,17.61,108.93]],
     ['lee','이주희','피부과 전문의 · 주닥','SKIN LONGEVITY','11.21 SAT','W',[-5.65,18.92,96.43]],
     ['choi','최예진','산부인과 전문의',"WOMEN'S HEALTH",'11.21 SAT','O',[-7.53,9.50,113.10]]];
   const LV=[['soon'],...L.filter(r=>!r[7])];
-  const WORD={"byun": ["LONGEVITY", "SCIENCE"], "noh": ["MOVE", "MENT"], "lee": ["SKIN", "LONGEVITY"], "choi": ["WOMEN'S", "HEALTH"], "woo": ["META", "BOLIC"], "oh": ["MENTAL", "WELLNESS"], "nakjun_lu": ["LONGEVITY", "HISTORY"], "hong_lu": ["EXERCISE", "SNACKING"], "ceo_lu": ["CEO", "TALK"]};
+  const WORD={"byun": ["LONGEVITY", "SCIENCE"], "noh": ["MOVE", "MENT"], "lee": ["SKIN", "LONGEVITY"], "choi": ["WOMEN'S", "HEALTH"], "woo": ["META", "BOLIC"], "oh": ["MENTAL", "WELLNESS"], "nakjun_lu": ["LONGEVITY", "HISTORY"], "hong_lu": ["EXERCISE", "SNACKING"], "ceo_lu": ["CEO", "TALK"], "trio_lu": ["WELLNESS", "ROUTINE"]};
   const rail=document.getElementById('rail');
   const BOOKL='https://mindwellexpo.com/ticket/longzine';
   const cardHTML=(r,clone)=>{ const ti=clone?' tabindex="-1" aria-hidden="true"':'';
     if(r[0]==='soon') return `<a class="l-card soon" href="${BOOKL}" target="_blank" rel="noopener"${ti}><div class="l-top"><span>LINEUP</span><b>COMING SOON</b></div><div class="soon-mid"><svg viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path d="M12 1.5C12.7 7.4 16.6 11.3 22.5 12C16.6 12.7 12.7 16.6 12 22.5C11.3 16.6 7.4 12.7 1.5 12C7.4 11.3 11.3 7.4 12 1.5Z" fill="#fff"/></svg><h3>더 많은 연사가<br>곧 공개됩니다</h3></div><div class="l-bottom"><span class="l-book">롱진콘 신청하기 ↗</span></div></a>`;
     const [f,n,d,c,dt,t,[x,y,w]]=r;
-    return `<a class="l-card ${t}${r[8]?' duo':''}" href="${BOOKL}" target="_blank" rel="noopener"${ti}><div class="l-type" aria-hidden="true"><span>${WORD[f][0]}</span><span>${WORD[f][1]}</span></div>${r[8]?`<img src="img/${r[8][0]}.webp?v=3" alt="" loading="lazy" style="left:${r[8][1]}%;top:${r[8][2]}%;width:${r[8][3]}%;filter:none">`:''}<img src="img/${f}.webp${f==='ceo_lu'?'?v=4':''}" alt="${clone?'':n}" loading="lazy" style="left:${x}%;top:${y}%;width:${w}%${f==='ceo_lu'?';filter:none':''}">${r[8]?'<div style="position:absolute;left:-5.95%;top:66.89%;width:108.33%;height:36.71%;background:linear-gradient(rgba(14,46,90,0),#0E2E5A);pointer-events:none"></div>':''}<div class="scrim"></div><div class="l-top"><span>${c}</span><b>${dt}</b></div><div class="l-bottom"><h3>${n}</h3><p>${d}</p><span class="l-book">예매하기 ↗</span></div></a>`; };
+    return `<a class="l-card ${t}${r[8]?' duo':''}" href="${BOOKL}" target="_blank" rel="noopener"${ti}><div class="l-type" aria-hidden="true"><span>${WORD[f][0]}</span><span>${WORD[f][1]}</span></div>${r[8]?`<img src="img/${r[8][0]}.webp?v=3" alt="" loading="lazy" style="left:${r[8][1]}%;top:${r[8][2]}%;width:${r[8][3]}%;filter:none">`:''}<img src="img/${f}.webp${f==='ceo_lu'?'?v=4':f==='trio_lu'?'?v=1':''}" alt="${clone?'':n}" loading="lazy" style="left:${x}%;top:${y}%;width:${w}%${(f==='ceo_lu'||f==='trio_lu')?';filter:none':''}">${r[8]?'<div style="position:absolute;left:-5.95%;top:66.89%;width:108.33%;height:36.71%;background:linear-gradient(rgba(14,46,90,0),#0E2E5A);pointer-events:none"></div>':''}${f==='trio_lu'?'':'<div class="scrim"></div>'}<div class="l-top"><span>${c}</span><b>${dt}</b></div><div class="l-bottom"><h3>${n}</h3><p>${d}</p><span class="l-book">예매하기 ↗</span></div></a>`; };
   // 무한 루프: 같은 카드 세트를 앞·뒤로 한 벌씩 더 붙이고, 가운데 세트를 벗어나면 같은 위치의 가운데 카드로 몰래 점프
   rail.innerHTML=LV.map(c=>cardHTML(c,1)).join('')+LV.map(c=>cardHTML(c,0)).join('')+LV.map(c=>cardHTML(c,1)).join('');
   const cards=()=>rail.querySelectorAll('.l-card');
