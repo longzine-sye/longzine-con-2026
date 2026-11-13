@@ -969,7 +969,7 @@ try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }cat
     ['smcc_bookdive','고경하','슈리베다 원장','SMCC BOOK DIVE','11.20 FRI','B',[0,0,100]],
     ['smcc_barre','에브리바레','함께 움직이는 액티비티','SMCC BARRE','11.21 SAT','B',[0,0,100]],
     ['smcc_yoga','박준형','시이작 원장 · 연희요가위크 기획자','SMCC YOGA','11.22 SUN','B',[0,0,100]]];
-  const LV=[['soon'],...L.filter(r=>!r[7])];
+  const LV=[...L.filter(r=>!r[7])];
   const WORD={"byun": ["LONGEVITY", "SCIENCE"], "noh": ["MOVE", "MENT"], "lee": ["SKIN", "LONGEVITY"], "choi": ["WOMEN'S", "HEALTH"], "woo": ["META", "BOLIC"], "woo_duo": ["META", "BOLIC"], "lee_trio": ["SKIN", "LONGEVITY"], "noh_duo": ["MOVE", "MENT"], "khs_duo": ["GLUCOSE", "SPIKE"], "choi_duo": ["WOMEN'S", "HEALTH"], "smcc_lu": ["SMCC", "SESSION"], "smcc_bookdive": ["SMCC", "SESSION"], "smcc_barre": ["SMCC", "SESSION"], "smcc_yoga": ["SMCC", "SESSION"], "oh": ["MENTAL", "WELLNESS"], "nakjun_lu": ["LONGEVITY", "HISTORY"], "hong_lu": ["EXERCISE", "SNACKING"], "ceo_lu": ["CEO", "TALK"], "trio_lu": ["WELLNESS", "ROUTINE"]};
   const rail=document.getElementById('rail');
   const BOOKL='https://mindwellexpo.com/ticket/longzine';
