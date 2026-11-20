@@ -1,62 +1,104 @@
 {
- "source": "https://mindwellexpo.com/ticket/longzine",
- "updated": "2026-11-19T17:08+09:00",
+ "source": "mindwellexpo admin sales",
+ "updated": "2026-11-20T10:02+09:00",
  "slots": {
   "1": {
    "state": "sep",
-   "time": "09:30-11:00"
+   "time": "09:30-11:00",
+   "cap": 80,
+   "sold": 0,
+   "left": 80
   },
   "2": {
    "state": "soldout",
-   "time": "11:30-12:30"
+   "time": "11:30-12:30",
+   "cap": 80,
+   "sold": 80,
+   "left": 0
   },
   "4": {
    "state": "soldout",
-   "time": "14:40-15:30"
+   "time": "14:40-15:30",
+   "cap": 80,
+   "sold": 80,
+   "left": 0
   },
   "5": {
-   "state": "open",
-   "time": "16:00-16:50"
+   "state": "soldout",
+   "time": "16:00-16:50",
+   "cap": 65,
+   "sold": 65,
+   "left": 0
   },
   "6": {
    "state": "sep",
-   "time": "09:30-11:00"
+   "time": "09:30-11:00",
+   "cap": 80,
+   "sold": 0,
+   "left": 80
   },
   "7": {
    "state": "soldout",
-   "time": "11:30-12:10"
+   "time": "11:30-12:10",
+   "cap": 80,
+   "sold": 80,
+   "left": 0
   },
   "8": {
    "state": "soldout",
-   "time": "13:40-14:40"
+   "time": "13:40-14:40",
+   "cap": 80,
+   "sold": 80,
+   "left": 0
   },
   "9": {
    "state": "soldout",
-   "time": "15:30-16:30"
+   "time": "15:30-16:30",
+   "cap": 60,
+   "sold": 60,
+   "left": 0
   },
   "10": {
    "state": "open",
-   "time": "17:00-18:00"
+   "time": "17:00-18:00",
+   "cap": 80,
+   "sold": 45,
+   "left": 35
   },
   "15": {
    "state": "sep",
-   "time": "09:30-10:30"
+   "time": "09:30-10:30",
+   "cap": 80,
+   "sold": 0,
+   "left": 80
   },
   "11": {
-   "state": "open",
-   "time": "11:10-12:10"
+   "state": "soldout",
+   "time": "11:10-12:10",
+   "cap": 80,
+   "sold": 80,
+   "left": 0
   },
   "12": {
    "state": "open",
-   "time": "12:30-13:30"
+   "time": "12:30-13:30",
+   "cap": 80,
+   "sold": 58,
+   "left": 22
   },
   "13": {
    "state": "soldout",
-   "time": "13:50-14:50"
+   "time": "13:50-14:50",
+   "cap": 60,
+   "sold": 60,
+   "left": 0
   },
   "14": {
    "state": "open",
-   "time": "15:30-16:30"
+   "time": "15:30-16:30",
+   "cap": 80,
+   "sold": 68,
+   "left": 12
   }
  }
 }
